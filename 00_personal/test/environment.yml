@@ -1,4 +1,4 @@
-name: /home/kayode/.kayode/learn2earn/00_personal/test/env
+name: test
 channels:
   - defaults
 dependencies:
