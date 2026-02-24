@@ -9,9 +9,9 @@ func main() {
 	bookworms, err := loadBookworms("testdata/bookworms.json")
 
 	if err != nil {
-		_, _ = fmt.Fprint(os.Stderr, "failed to load bookworms %s\n", err)
+		_, _ = fmt.Fprintf(os.Stderr, "failed to load bookworms %s\n", err)
 		os.Exit(1)
 	}
 
-	fmt.Println(bookworms)
+	fmt.Println(findCommonBooks(bookworms))
 }
