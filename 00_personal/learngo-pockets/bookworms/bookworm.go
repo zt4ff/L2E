@@ -7,7 +7,7 @@ import (
 
 type Bookworm struct {
 	Name  string `json:"name"`
-	Title string `json:"books"`
+	Books []Book `json:"books"`
 }
 
 type Book struct {
