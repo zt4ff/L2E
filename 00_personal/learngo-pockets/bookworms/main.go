@@ -7,16 +7,17 @@ import (
 )
 
 func main() {
-	filePath := flag.String("filepath", "testdata/bookworms.json", "path to a  JSON file")
-
+	path := flag.String("path", "testdata/bookworms_dataset.json", "the path to the database JSON")
 	flag.Parse()
 
-	bookworms, err := loadBookworms(*filePath)
-
+	bookDatabase, err := parseJson(*path)
 	if err != nil {
-		_, _ = fmt.Fprintf(os.Stderr, "failed to load bookworms %s\n", err)
-		os.Exit(1)
+		fmt.Fprintf(os.Stderr, "error parsing JSON: %v", err)
 	}
 
-	displayBooks(findCommonBooks(bookworms))
+	// find common book
+
+	for key, _ := range bookDatabase.Bookworms {
+		fmt.Println(key)
+	}
 }

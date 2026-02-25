@@ -1,32 +1,172 @@
-[
-  {
-    "name": "Fadi",
-    "books": [
-      {
-        "author": "Margaret Atwood",
-        "title": "The Handmaid's Tale"
-      },
-      {
-        "author": "Sylvia Plath",
-        "title": "The Bell Jar"
-      }
+{
+  "schema_version": "1.0.0",
+  "description": "Bookworm dataset for training a book recommendation model. Ratings are 1\u20135. Fields include user preferences, reading history, and wishlist.",
+  "model_hints": {
+    "target": "Predict rating a user would give an unread book",
+    "features_to_engineer": [
+      "genre_overlap between user preferences and book genres",
+      "author affinity (has user read other books by same author)",
+      "avg_rating_given vs book avg_rating delta",
+      "book era vs user preferred_era match",
+      "wishlist presence as implicit positive signal",
+      "did_not_finish as negative signal",
+      "reread as strong positive signal",
+      "reading_pace vs book pages"
+    ],
+    "suggested_algorithms": [
+      "SVD collaborative filtering",
+      "KNN user-based CF",
+      "content-based cosine similarity",
+      "hybrid"
     ]
   },
-  {
-    "name": "Peggy",
-    "books": [
-      {
-        "author": "Margaret Atwood",
-        "title": "Oryx and Crake"
+  "books": [
+    {
+      "book_id": "b001",
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "dystopia",
+        "fiction",
+        "feminist"
+      ],
+      "year": 1985,
+      "pages": 311,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780385490818"
+    },
+    {
+      "book_id": "b002",
+      "title": "Oryx and Crake",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "sci-fi",
+        "dystopia",
+        "fiction"
+      ],
+      "year": 2003,
+      "pages": 374,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780385721677"
+    }, 
+     {
+      "book_id": "b003",
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "author_id": "a002",
+      "genres": [
+        "fiction",
+        "classic",
+        "mental-health"
+      ],
+      "year": 1963,
+      "pages": 244,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780060837020"
+    },
+    {
+      "book_id": "b004",
+      "title": "Jane Eyre",
+      "author": "Charlotte Bront\u00eb",
+      "author_id": "a003",
+      "genres": [
+        "classic",
+        "romance",
+        "fiction"
+      ],
+      "year": 1847,
+      "pages": 532,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780141441146"
+    }
+  ],
+    "bookworms": [
+    {
+      "user_id": "u001",
+      "name": "Fadi",
+      "age": 29,
+      "location": {
+        "city": "Beirut",
+        "country": "Lebanon",
+        "timezone": "Asia/Beirut"
       },
-      {
-        "author": "Margaret Atwood",
-        "title": "The Handmaid's Tale"
+      "member_since": "2021-03-15",
+      "preferences": {
+        "favorite_genres": [
+          "dystopia",
+          "feminist",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "romance",
+          "poetry"
+        ],
+        "favorite_authors": [
+          "a001",
+          "a002"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "dark",
+          "cerebral"
+        ],
+        "preferred_length": "medium",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
       },
-      {
-        "author": "Charlotte Brontë",
-        "title": "Jane Eyre"
-      }
-    ]
-  }
-]
+      "reading_stats": {
+        "total_books_read": 2,
+        "reading_goal_per_year": 24,
+        "books_read_this_year": 7,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 21,
+        "most_read_genre": "dystopia",
+        "most_read_author_id": "a001"
+      },
+      "books_read": [
+        {
+          "book_id": "b001",
+          "rating": 5,
+          "date_read": "2022-01-10",
+          "did_not_finish": false,
+          "review_snippet": "Chilling and brilliant.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b003",
+          "rating": 4,
+          "date_read": "2022-04-22",
+          "did_not_finish": false,
+          "review_snippet": "Raw and haunting.",
+          "format": "ebook",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b014",
+          "added_date": "2022-06-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b005",
+          "added_date": "2022-08-15",
+          "priority": "medium"
+        },
+        {
+          "book_id": "b044",
+          "added_date": "2023-01-10",
+          "priority": "high"
+        }
+      ]
+    }]
+}

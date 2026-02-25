@@ -7,15 +7,94 @@ import (
 	"sort"
 )
 
-type Bookworm struct {
-	Name  string `json:"name"`
-	Books []Book `json:"books"`
+type Book struct {
+	BookID    string   `json:"book_id"`
+	Title     string   `json:"title"`
+	Author    string   `json:"author"`
+	AuthorID  string   `json:"author_id"`
+	Genres    []string `json:"genres"`
+	Year      int      `json:"year"`
+	Pages     int      `json:"pages"`
+	AvgRating float64  `json:"avg_rating"`
+	Language  string   `json:"language"`
+	Isbn      string   `json:"isbn"`
 }
 
-type Book struct {
-	Author string `json:"author"`
-	Title  string `json:"title"`
+type Bookworm struct {
+	UserID   string `json:"user_id"`
+	Name     string `json:"name"`
+	Age      int    `json:"age"`
+	Location struct {
+		City     string `json:"city"`
+		Country  string `json:"country"`
+		Timezone string `json:"timezone"`
+	} `json:"location"`
+	MemberSince string `json:"member_since"`
+	Preferences struct {
+		FavoriteGenres  []string `json:"favorite_genres"`
+		DislikedGenres  []string `json:"disliked_genres"`
+		FavoriteAuthors []string `json:"favorite_authors"`
+		ReadingPace     string   `json:"reading_pace"`
+		PreferredMoods  []string `json:"preferred_moods"`
+		PreferredLength string   `json:"preferred_length"`
+		PreferredEra    []string `json:"preferred_era"`
+	} `json:"preferences"`
+	ReadingStats struct {
+		TotalBooksRead     int     `json:"total_books_read"`
+		ReadingGoalPerYear int     `json:"reading_goal_per_year"`
+		BooksReadThisYear  int     `json:"books_read_this_year"`
+		AvgRatingGiven     float64 `json:"avg_rating_given"`
+		LongestStreakDays  int     `json:"longest_streak_days"`
+		MostReadGenre      string  `json:"most_read_genre"`
+		MostReadAuthorID   string  `json:"most_read_author_id"`
+	} `json:"reading_stats"`
+	BooksRead []struct {
+		BookID        string `json:"book_id"`
+		Rating        int    `json:"rating"`
+		DateRead      string `json:"date_read"`
+		DidNotFinish  bool   `json:"did_not_finish"`
+		ReviewSnippet string `json:"review_snippet"`
+		Format        string `json:"format"`
+		Reread        bool   `json:"reread"`
+	} `json:"books_read"`
+	Wishlist []struct {
+		BookID    string `json:"book_id"`
+		AddedDate string `json:"added_date"`
+		Priority  string `json:"priority"`
+	} `json:"wishlist"`
 }
+
+type BookDatabase struct {
+	SchemaVersion string `json:"schema_version"`
+	Description   string `json:"description"`
+	ModelHints    struct {
+		Target              string   `json:"target"`
+		FeaturesToEngineer  []string `json:"features_to_engineer"`
+		SuggestedAlgorithms []string `json:"suggested_algorithms"`
+	} `json:"model_hints"`
+	Books     []Book     `json:"books"`
+	Bookworms []Bookworm `json:"bookworms"`
+}
+
+func parseJson(path string) (BookDatabase, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return BookDatabase{}, err
+	}
+	defer f.Close()
+
+	var bookDatabase BookDatabase
+
+	err = json.NewDecoder(f).Decode(&bookDatabase)
+
+	if err != nil {
+		return BookDatabase{}, err
+	}
+
+	return bookDatabase, nil
+}
+
+// ===================================================================
 
 func loadBookworms(filePath string) ([]Bookworm, error) {
 	f, err := os.Open(filePath)
@@ -31,32 +110,6 @@ func loadBookworms(filePath string) ([]Bookworm, error) {
 	}
 
 	return bookworms, nil
-}
-
-func booksCount(bookworms []Bookworm) map[Book]uint {
-	count := make(map[Book]uint)
-	for _, bookworm := range bookworms {
-		for _, book := range bookworm.Books {
-			count[book]++
-		}
-	}
-
-	return count
-}
-
-// returns the books thar are on more than one bookworm's shelf
-func findCommonBooks(bookworms []Bookworm) []Book {
-	booksOnShelves := booksCount(bookworms)
-
-	commonBooks := []Book{}
-
-	for book, count := range booksOnShelves {
-		if count > 1 {
-			commonBooks = append(commonBooks, book)
-		}
-	}
-
-	return sortBooks(commonBooks)
 }
 
 func sortBooks(books []Book) []Book {
