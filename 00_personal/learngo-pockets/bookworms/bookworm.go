@@ -56,7 +56,7 @@ func findCommonBooks(bookworms []Bookworm) []Book {
 		}
 	}
 
-	return commonBooks
+	return sortBooks(commonBooks)
 }
 
 func sortBooks(books []Book) []Book {

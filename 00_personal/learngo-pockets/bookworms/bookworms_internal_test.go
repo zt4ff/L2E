@@ -160,7 +160,7 @@ func TestCommonBooks(t *testing.T) {
 				{Name: "Fadi", Books: []Book{handmaidsTale, theBellJar}},
 				{Name: "Peggy", Books: []Book{handmaidsTale, theBellJar}},
 			},
-			want: []Book{handmaidsTale, theBellJar},
+			want: sortBooks([]Book{handmaidsTale, theBellJar}),
 		},
 		"more than 2 bookworms with the same book": {
 			input: []Bookworm{
@@ -168,7 +168,7 @@ func TestCommonBooks(t *testing.T) {
 				{Name: "Peggy", Books: []Book{oryxAndCrake, janeEyre}},
 				{Name: "Pookie", Books: []Book{handmaidsTale, oryxAndCrake}},
 			},
-			want: []Book{handmaidsTale, oryxAndCrake},
+			want: sortBooks([]Book{handmaidsTale, oryxAndCrake}),
 		},
 		"empty books": {
 			input: []Bookworm{
