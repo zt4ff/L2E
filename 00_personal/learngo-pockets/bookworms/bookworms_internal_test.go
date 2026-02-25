@@ -60,7 +60,7 @@ func TestLoadBookworms_Success(t *testing.T) {
 	}
 }
 
-// ===============================================
+// ================================================================================================
 
 func equalBooksCount(t *testing.T, got, want map[Book]uint) bool {
 	t.Helper()
@@ -185,6 +185,73 @@ func TestCommonBooks(t *testing.T) {
 			got := findCommonBooks(testcase.input)
 			if !reflect.DeepEqual(got, testcase.want) {
 				t.Fatalf("got a different list of books: %v, expected %v", got, testcase.want)
+			}
+		})
+	}
+}
+
+// ========================================================================================
+func TestSortBook(t *testing.T) {
+	testcases := map[string]struct {
+		input []Book
+		want  []Book
+	}{
+		"sort books": {
+			input: []Book{oryxAndCrake, handmaidsTale},
+			want:  []Book{oryxAndCrake, handmaidsTale},
+		},
+		"empty books": {
+			input: []Book{},
+			want:  []Book{},
+		},
+	}
+
+	for name, testcase := range testcases {
+		t.Run(name, func(t *testing.T) {
+			got := sortBooks(testcase.input)
+
+			if !reflect.DeepEqual(got, testcase.want) {
+				t.Fatalf("got a different list of books: %v but %v", got, testcase.want)
+			}
+		})
+	}
+}
+
+// ========================================================================================
+
+func TestListOtherBook(t *testing.T) {
+	testcases := map[string]struct {
+		input []Book
+		index int
+		want  []Book
+	}{
+		"index provided": {
+			input: []Book{oryxAndCrake, handmaidsTale, janeEyre},
+			index: 1,
+			want:  []Book{oryxAndCrake, janeEyre},
+		},
+		"out of index provided": {
+			input: []Book{oryxAndCrake, handmaidsTale, janeEyre},
+			index: 5,
+			want:  []Book{oryxAndCrake, handmaidsTale, janeEyre},
+		},
+		"empty books provided": {
+			input: []Book{},
+			index: 3,
+			want:  []Book{},
+		},
+	}
+
+	for name, testcase := range testcases {
+		t.Run(name, func(t *testing.T) {
+			got := listOtherBooksOnShelves(testcase.index, testcase.input)
+
+			if len(got) == 0 && len(testcase.want) == 0 {
+				return
+			}
+
+			if !reflect.DeepEqual(got, testcase.want) {
+				t.Fatalf("got a different list of books: %v but %v", got, testcase.want)
 			}
 		})
 	}
