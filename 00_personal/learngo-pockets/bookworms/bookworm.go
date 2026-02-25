@@ -45,17 +45,15 @@ func booksCount(bookworms []Bookworm) map[Book]uint {
 
 // returns the books thar are on more than one bookworm's shelf
 func findCommonBooks(bookworms []Bookworm) []Book {
-	dict := make(map[string]uint)
-	result := []Book{}
-	for _, bookworm := range bookworms {
-		for _, book := range bookworm.Books {
-			dict[book.Title]++
+	booksOnShelves := booksCount(bookworms)
 
-			if dict[book.Title] > 1 {
-				result = append(result, book)
-			}
+	commonBooks := []Book{}
+
+	for book, count := range booksOnShelves {
+		if count > 1 {
+			commonBooks = append(commonBooks, book)
 		}
 	}
 
-	return result
+	return commonBooks
 }
