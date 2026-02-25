@@ -1,0 +1,2471 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Bookworm dataset for training a book recommendation model. Ratings are 1\u20135. Fields include user preferences, reading history, and wishlist.",
+  "model_hints": {
+    "target": "Predict rating a user would give an unread book",
+    "features_to_engineer": [
+      "genre_overlap between user preferences and book genres",
+      "author affinity (has user read other books by same author)",
+      "avg_rating_given vs book avg_rating delta",
+      "book era vs user preferred_era match",
+      "wishlist presence as implicit positive signal",
+      "did_not_finish as negative signal",
+      "reread as strong positive signal",
+      "reading_pace vs book pages"
+    ],
+    "suggested_algorithms": [
+      "SVD collaborative filtering",
+      "KNN user-based CF",
+      "content-based cosine similarity",
+      "hybrid"
+    ]
+  },
+  "books": [
+    {
+      "book_id": "b001",
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "dystopia",
+        "fiction",
+        "feminist"
+      ],
+      "year": 1985,
+      "pages": 311,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780385490818"
+    },
+    {
+      "book_id": "b002",
+      "title": "Oryx and Crake",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "sci-fi",
+        "dystopia",
+        "fiction"
+      ],
+      "year": 2003,
+      "pages": 374,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780385721677"
+    },
+    {
+      "book_id": "b003",
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "author_id": "a002",
+      "genres": [
+        "fiction",
+        "classic",
+        "mental-health"
+      ],
+      "year": 1963,
+      "pages": 244,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780060837020"
+    },
+    {
+      "book_id": "b004",
+      "title": "Jane Eyre",
+      "author": "Charlotte Bront\u00eb",
+      "author_id": "a003",
+      "genres": [
+        "classic",
+        "romance",
+        "fiction"
+      ],
+      "year": 1847,
+      "pages": 532,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780141441146"
+    },
+    {
+      "book_id": "b005",
+      "title": "1984",
+      "author": "George Orwell",
+      "author_id": "a004",
+      "genres": [
+        "dystopia",
+        "classic",
+        "sci-fi"
+      ],
+      "year": 1949,
+      "pages": 328,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780451524935"
+    },
+    {
+      "book_id": "b006",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "author_id": "a005",
+      "genres": [
+        "dystopia",
+        "sci-fi",
+        "classic"
+      ],
+      "year": 1932,
+      "pages": 311,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780060850524"
+    },
+    {
+      "book_id": "b007",
+      "title": "The Power of the Dog",
+      "author": "Don Winslow",
+      "author_id": "a006",
+      "genres": [
+        "thriller",
+        "crime",
+        "fiction"
+      ],
+      "year": 2005,
+      "pages": 544,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9781400096930"
+    },
+    {
+      "book_id": "b008",
+      "title": "Never Let Me Go",
+      "author": "Kazuo Ishiguro",
+      "author_id": "a007",
+      "genres": [
+        "dystopia",
+        "fiction",
+        "sci-fi"
+      ],
+      "year": 2005,
+      "pages": 288,
+      "avg_rating": 3.8,
+      "language": "en",
+      "isbn": "9781400078776"
+    },
+    {
+      "book_id": "b009",
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "author_id": "a008",
+      "genres": [
+        "dystopia",
+        "fiction",
+        "survival"
+      ],
+      "year": 2006,
+      "pages": 287,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780307387899"
+    },
+    {
+      "book_id": "b010",
+      "title": "Station Eleven",
+      "author": "Emily St. John Mandel",
+      "author_id": "a009",
+      "genres": [
+        "dystopia",
+        "fiction",
+        "sci-fi"
+      ],
+      "year": 2014,
+      "pages": 333,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780385353304"
+    },
+    {
+      "book_id": "b011",
+      "title": "Wuthering Heights",
+      "author": "Emily Bront\u00eb",
+      "author_id": "a010",
+      "genres": [
+        "classic",
+        "romance",
+        "gothic"
+      ],
+      "year": 1847,
+      "pages": 342,
+      "avg_rating": 3.8,
+      "language": "en",
+      "isbn": "9780141439556"
+    },
+    {
+      "book_id": "b012",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "author_id": "a011",
+      "genres": [
+        "classic",
+        "romance",
+        "fiction"
+      ],
+      "year": 1813,
+      "pages": 432,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9780141439518"
+    },
+    {
+      "book_id": "b013",
+      "title": "Sense and Sensibility",
+      "author": "Jane Austen",
+      "author_id": "a011",
+      "genres": [
+        "classic",
+        "romance",
+        "fiction"
+      ],
+      "year": 1811,
+      "pages": 374,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780141439662"
+    },
+    {
+      "book_id": "b014",
+      "title": "The Testaments",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "dystopia",
+        "fiction",
+        "feminist"
+      ],
+      "year": 2019,
+      "pages": 419,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780385543781"
+    },
+    {
+      "book_id": "b015",
+      "title": "MaddAddam",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "sci-fi",
+        "dystopia",
+        "fiction"
+      ],
+      "year": 2013,
+      "pages": 394,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780385528771"
+    },
+    {
+      "book_id": "b016",
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "author_id": "a007",
+      "genres": [
+        "fiction",
+        "classic",
+        "drama"
+      ],
+      "year": 1989,
+      "pages": 258,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780679731726"
+    },
+    {
+      "book_id": "b017",
+      "title": "Klara and the Sun",
+      "author": "Kazuo Ishiguro",
+      "author_id": "a007",
+      "genres": [
+        "sci-fi",
+        "fiction",
+        "drama"
+      ],
+      "year": 2021,
+      "pages": 307,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780571364879"
+    },
+    {
+      "book_id": "b018",
+      "title": "Alias Grace",
+      "author": "Margaret Atwood",
+      "author_id": "a001",
+      "genres": [
+        "historical",
+        "fiction",
+        "thriller"
+      ],
+      "year": 1996,
+      "pages": 468,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780385490443"
+    },
+    {
+      "book_id": "b019",
+      "title": "The Virgin Suicides",
+      "author": "Jeffrey Eugenides",
+      "author_id": "a012",
+      "genres": [
+        "fiction",
+        "drama",
+        "coming-of-age"
+      ],
+      "year": 1993,
+      "pages": 249,
+      "avg_rating": 3.8,
+      "language": "en",
+      "isbn": "9780312428815"
+    },
+    {
+      "book_id": "b020",
+      "title": "Middlesex",
+      "author": "Jeffrey Eugenides",
+      "author_id": "a012",
+      "genres": [
+        "fiction",
+        "historical",
+        "coming-of-age"
+      ],
+      "year": 2002,
+      "pages": 529,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780312422158"
+    },
+    {
+      "book_id": "b021",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "author_id": "a013",
+      "genres": [
+        "classic",
+        "fiction",
+        "coming-of-age"
+      ],
+      "year": 1951,
+      "pages": 224,
+      "avg_rating": 3.8,
+      "language": "en",
+      "isbn": "9780316769174"
+    },
+    {
+      "book_id": "b022",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "author_id": "a014",
+      "genres": [
+        "classic",
+        "fiction",
+        "drama"
+      ],
+      "year": 1960,
+      "pages": 281,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9780061743528"
+    },
+    {
+      "book_id": "b023",
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "author_id": "a015",
+      "genres": [
+        "historical",
+        "fiction",
+        "drama"
+      ],
+      "year": 1987,
+      "pages": 321,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9781400033416"
+    },
+    {
+      "book_id": "b024",
+      "title": "Sula",
+      "author": "Toni Morrison",
+      "author_id": "a015",
+      "genres": [
+        "fiction",
+        "drama",
+        "classic"
+      ],
+      "year": 1973,
+      "pages": 174,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9781400033423"
+    },
+    {
+      "book_id": "b025",
+      "title": "The Color Purple",
+      "author": "Alice Walker",
+      "author_id": "a016",
+      "genres": [
+        "fiction",
+        "classic",
+        "feminist"
+      ],
+      "year": 1982,
+      "pages": 286,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780156028356"
+    },
+    {
+      "book_id": "b026",
+      "title": "Their Eyes Were Watching God",
+      "author": "Zora Neale Hurston",
+      "author_id": "a017",
+      "genres": [
+        "classic",
+        "fiction",
+        "romance"
+      ],
+      "year": 1937,
+      "pages": 286,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780061120060"
+    },
+    {
+      "book_id": "b027",
+      "title": "Ariel",
+      "author": "Sylvia Plath",
+      "author_id": "a002",
+      "genres": [
+        "poetry",
+        "classic",
+        "feminist"
+      ],
+      "year": 1965,
+      "pages": 86,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780060909413"
+    },
+    {
+      "book_id": "b028",
+      "title": "The Hours",
+      "author": "Michael Cunningham",
+      "author_id": "a018",
+      "genres": [
+        "fiction",
+        "drama",
+        "mental-health"
+      ],
+      "year": 1998,
+      "pages": 229,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780312305543"
+    },
+    {
+      "book_id": "b029",
+      "title": "Mrs Dalloway",
+      "author": "Virginia Woolf",
+      "author_id": "a019",
+      "genres": [
+        "classic",
+        "fiction",
+        "stream-of-consciousness"
+      ],
+      "year": 1925,
+      "pages": 194,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780156628709"
+    },
+    {
+      "book_id": "b030",
+      "title": "To the Lighthouse",
+      "author": "Virginia Woolf",
+      "author_id": "a019",
+      "genres": [
+        "classic",
+        "fiction",
+        "stream-of-consciousness"
+      ],
+      "year": 1927,
+      "pages": 209,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780156907399"
+    },
+    {
+      "book_id": "b031",
+      "title": "The Secret History",
+      "author": "Donna Tartt",
+      "author_id": "a020",
+      "genres": [
+        "fiction",
+        "thriller",
+        "coming-of-age"
+      ],
+      "year": 1992,
+      "pages": 559,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9781400031702"
+    },
+    {
+      "book_id": "b032",
+      "title": "The Goldfinch",
+      "author": "Donna Tartt",
+      "author_id": "a020",
+      "genres": [
+        "fiction",
+        "drama",
+        "coming-of-age"
+      ],
+      "year": 2013,
+      "pages": 771,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780316055437"
+    },
+    {
+      "book_id": "b033",
+      "title": "A Little Life",
+      "author": "Hanya Yanagihara",
+      "author_id": "a021",
+      "genres": [
+        "fiction",
+        "drama",
+        "mental-health"
+      ],
+      "year": 2015,
+      "pages": 720,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9780385539258"
+    },
+    {
+      "book_id": "b034",
+      "title": "Normal People",
+      "author": "Sally Rooney",
+      "author_id": "a022",
+      "genres": [
+        "fiction",
+        "romance",
+        "contemporary"
+      ],
+      "year": 2018,
+      "pages": 273,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780571334650"
+    },
+    {
+      "book_id": "b035",
+      "title": "Conversations with Friends",
+      "author": "Sally Rooney",
+      "author_id": "a022",
+      "genres": [
+        "fiction",
+        "romance",
+        "contemporary"
+      ],
+      "year": 2017,
+      "pages": 304,
+      "avg_rating": 3.7,
+      "language": "en",
+      "isbn": "9780571333134"
+    },
+    {
+      "book_id": "b036",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "author_id": "a023",
+      "genres": [
+        "classic",
+        "fiction",
+        "drama"
+      ],
+      "year": 1925,
+      "pages": 180,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780743273565"
+    },
+    {
+      "book_id": "b037",
+      "title": "East of Eden",
+      "author": "John Steinbeck",
+      "author_id": "a024",
+      "genres": [
+        "classic",
+        "fiction",
+        "drama"
+      ],
+      "year": 1952,
+      "pages": 601,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9780142004234"
+    },
+    {
+      "book_id": "b038",
+      "title": "The Grapes of Wrath",
+      "author": "John Steinbeck",
+      "author_id": "a024",
+      "genres": [
+        "classic",
+        "fiction",
+        "historical"
+      ],
+      "year": 1939,
+      "pages": 464,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9780143039433"
+    },
+    {
+      "book_id": "b039",
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck",
+      "author_id": "a024",
+      "genres": [
+        "classic",
+        "fiction",
+        "drama"
+      ],
+      "year": 1937,
+      "pages": 112,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780142000670"
+    },
+    {
+      "book_id": "b040",
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "author_id": "a025",
+      "genres": [
+        "dystopia",
+        "sci-fi",
+        "classic"
+      ],
+      "year": 1953,
+      "pages": 256,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9781451673319"
+    },
+    {
+      "book_id": "b041",
+      "title": "The Left Hand of Darkness",
+      "author": "Ursula K. Le Guin",
+      "author_id": "a026",
+      "genres": [
+        "sci-fi",
+        "fiction",
+        "feminist"
+      ],
+      "year": 1969,
+      "pages": 304,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780441478125"
+    },
+    {
+      "book_id": "b042",
+      "title": "The Dispossessed",
+      "author": "Ursula K. Le Guin",
+      "author_id": "a026",
+      "genres": [
+        "sci-fi",
+        "fiction",
+        "dystopia"
+      ],
+      "year": 1974,
+      "pages": 341,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780061054884"
+    },
+    {
+      "book_id": "b043",
+      "title": "Kindred",
+      "author": "Octavia Butler",
+      "author_id": "a027",
+      "genres": [
+        "sci-fi",
+        "historical",
+        "fiction"
+      ],
+      "year": 1979,
+      "pages": 287,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780807083697"
+    },
+    {
+      "book_id": "b044",
+      "title": "Parable of the Sower",
+      "author": "Octavia Butler",
+      "author_id": "a027",
+      "genres": [
+        "dystopia",
+        "sci-fi",
+        "fiction"
+      ],
+      "year": 1993,
+      "pages": 345,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9781538732182"
+    },
+    {
+      "book_id": "b045",
+      "title": "Americanah",
+      "author": "Chimamanda Ngozi Adichie",
+      "author_id": "a028",
+      "genres": [
+        "fiction",
+        "contemporary",
+        "romance"
+      ],
+      "year": 2013,
+      "pages": 477,
+      "avg_rating": 4.2,
+      "language": "en",
+      "isbn": "9780307455925"
+    },
+    {
+      "book_id": "b046",
+      "title": "Purple Hibiscus",
+      "author": "Chimamanda Ngozi Adichie",
+      "author_id": "a028",
+      "genres": [
+        "fiction",
+        "coming-of-age",
+        "drama"
+      ],
+      "year": 2003,
+      "pages": 307,
+      "avg_rating": 4.0,
+      "language": "en",
+      "isbn": "9781616953430"
+    },
+    {
+      "book_id": "b047",
+      "title": "Half of a Yellow Sun",
+      "author": "Chimamanda Ngozi Adichie",
+      "author_id": "a028",
+      "genres": [
+        "historical",
+        "fiction",
+        "drama"
+      ],
+      "year": 2006,
+      "pages": 433,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9780007200283"
+    },
+    {
+      "book_id": "b048",
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "author_id": "a029",
+      "genres": [
+        "classic",
+        "historical",
+        "fiction"
+      ],
+      "year": 1958,
+      "pages": 209,
+      "avg_rating": 3.9,
+      "language": "en",
+      "isbn": "9780385474542"
+    },
+    {
+      "book_id": "b049",
+      "title": "Pachinko",
+      "author": "Min Jin Lee",
+      "author_id": "a030",
+      "genres": [
+        "historical",
+        "fiction",
+        "drama"
+      ],
+      "year": 2017,
+      "pages": 485,
+      "avg_rating": 4.3,
+      "language": "en",
+      "isbn": "9781455563937"
+    },
+    {
+      "book_id": "b050",
+      "title": "The Name of the Rose",
+      "author": "Umberto Eco",
+      "author_id": "a031",
+      "genres": [
+        "historical",
+        "thriller",
+        "fiction"
+      ],
+      "year": 1980,
+      "pages": 502,
+      "avg_rating": 4.1,
+      "language": "en",
+      "isbn": "9780156001311"
+    }
+  ],
+  "bookworms": [
+    {
+      "user_id": "u001",
+      "name": "Fadi",
+      "age": 29,
+      "location": {
+        "city": "Beirut",
+        "country": "Lebanon",
+        "timezone": "Asia/Beirut"
+      },
+      "member_since": "2021-03-15",
+      "preferences": {
+        "favorite_genres": [
+          "dystopia",
+          "feminist",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "romance",
+          "poetry"
+        ],
+        "favorite_authors": [
+          "a001",
+          "a002"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "dark",
+          "cerebral"
+        ],
+        "preferred_length": "medium",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 2,
+        "reading_goal_per_year": 24,
+        "books_read_this_year": 7,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 21,
+        "most_read_genre": "dystopia",
+        "most_read_author_id": "a001"
+      },
+      "books_read": [
+        {
+          "book_id": "b001",
+          "rating": 5,
+          "date_read": "2022-01-10",
+          "did_not_finish": false,
+          "review_snippet": "Chilling and brilliant.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b003",
+          "rating": 4,
+          "date_read": "2022-04-22",
+          "did_not_finish": false,
+          "review_snippet": "Raw and haunting.",
+          "format": "ebook",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b014",
+          "added_date": "2022-06-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b005",
+          "added_date": "2022-08-15",
+          "priority": "medium"
+        },
+        {
+          "book_id": "b044",
+          "added_date": "2023-01-10",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "user_id": "u002",
+      "name": "Peggy",
+      "age": 34,
+      "location": {
+        "city": "Dublin",
+        "country": "Ireland",
+        "timezone": "Europe/Dublin"
+      },
+      "member_since": "2020-07-01",
+      "preferences": {
+        "favorite_genres": [
+          "classic",
+          "romance",
+          "dystopia"
+        ],
+        "disliked_genres": [
+          "crime",
+          "thriller"
+        ],
+        "favorite_authors": [
+          "a003",
+          "a011",
+          "a001"
+        ],
+        "reading_pace": "slow",
+        "preferred_moods": [
+          "romantic",
+          "contemplative",
+          "dark"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "classic",
+          "modern"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 3,
+        "reading_goal_per_year": 30,
+        "books_read_this_year": 12,
+        "avg_rating_given": 4.67,
+        "longest_streak_days": 45,
+        "most_read_genre": "classic",
+        "most_read_author_id": "a001"
+      },
+      "books_read": [
+        {
+          "book_id": "b002",
+          "rating": 4,
+          "date_read": "2021-06-05",
+          "did_not_finish": false,
+          "review_snippet": "Thought-provoking.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b001",
+          "rating": 5,
+          "date_read": "2021-08-18",
+          "did_not_finish": false,
+          "review_snippet": "Masterpiece.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b004",
+          "rating": 5,
+          "date_read": "2022-02-14",
+          "did_not_finish": false,
+          "review_snippet": "A timeless classic.",
+          "format": "hardcover",
+          "reread": true
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b012",
+          "added_date": "2022-03-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b029",
+          "added_date": "2022-09-10",
+          "priority": "low"
+        },
+        {
+          "book_id": "b018",
+          "added_date": "2023-01-05",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u003",
+      "name": "Amara",
+      "age": 26,
+      "location": {
+        "city": "Lagos",
+        "country": "Nigeria",
+        "timezone": "Africa/Lagos"
+      },
+      "member_since": "2022-01-20",
+      "preferences": {
+        "favorite_genres": [
+          "fiction",
+          "historical",
+          "feminist"
+        ],
+        "disliked_genres": [
+          "sci-fi",
+          "horror"
+        ],
+        "favorite_authors": [
+          "a015",
+          "a016",
+          "a028"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "uplifting",
+          "cerebral"
+        ],
+        "preferred_length": "medium",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 4,
+        "reading_goal_per_year": 20,
+        "books_read_this_year": 5,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 14,
+        "most_read_genre": "fiction",
+        "most_read_author_id": "a015"
+      },
+      "books_read": [
+        {
+          "book_id": "b023",
+          "rating": 5,
+          "date_read": "2022-03-01",
+          "did_not_finish": false,
+          "review_snippet": "Devastating and essential.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b025",
+          "rating": 5,
+          "date_read": "2022-05-10",
+          "did_not_finish": false,
+          "review_snippet": "Powerful.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b026",
+          "rating": 4,
+          "date_read": "2022-07-22",
+          "did_not_finish": false,
+          "review_snippet": "Beautiful prose.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b024",
+          "rating": 4,
+          "date_read": "2023-01-03",
+          "did_not_finish": false,
+          "review_snippet": "Morrison at her best.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b047",
+          "added_date": "2022-10-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b045",
+          "added_date": "2022-11-15",
+          "priority": "high"
+        },
+        {
+          "book_id": "b022",
+          "added_date": "2023-01-20",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u004",
+      "name": "Soren",
+      "age": 41,
+      "location": {
+        "city": "Copenhagen",
+        "country": "Denmark",
+        "timezone": "Europe/Copenhagen"
+      },
+      "member_since": "2019-11-11",
+      "preferences": {
+        "favorite_genres": [
+          "sci-fi",
+          "dystopia",
+          "classic"
+        ],
+        "disliked_genres": [
+          "romance",
+          "contemporary"
+        ],
+        "favorite_authors": [
+          "a004",
+          "a005",
+          "a008"
+        ],
+        "reading_pace": "fast",
+        "preferred_moods": [
+          "dark",
+          "adventurous",
+          "cerebral"
+        ],
+        "preferred_length": "any",
+        "preferred_era": [
+          "classic",
+          "modern"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 6,
+        "reading_goal_per_year": 40,
+        "books_read_this_year": 18,
+        "avg_rating_given": 4.33,
+        "longest_streak_days": 90,
+        "most_read_genre": "dystopia",
+        "most_read_author_id": "a004"
+      },
+      "books_read": [
+        {
+          "book_id": "b005",
+          "rating": 5,
+          "date_read": "2020-01-15",
+          "did_not_finish": false,
+          "review_snippet": "Still relevant.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b006",
+          "rating": 4,
+          "date_read": "2020-03-22",
+          "did_not_finish": false,
+          "review_snippet": "Prescient.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b040",
+          "rating": 4,
+          "date_read": "2020-06-01",
+          "did_not_finish": false,
+          "review_snippet": "Short but powerful.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b008",
+          "rating": 4,
+          "date_read": "2021-02-10",
+          "did_not_finish": false,
+          "review_snippet": "Quietly devastating.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b009",
+          "rating": 5,
+          "date_read": "2021-09-05",
+          "did_not_finish": false,
+          "review_snippet": "Unputdownable.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b002",
+          "rating": 4,
+          "date_read": "2022-04-11",
+          "did_not_finish": false,
+          "review_snippet": "Inventive world.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b042",
+          "added_date": "2022-05-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b044",
+          "added_date": "2022-07-20",
+          "priority": "high"
+        },
+        {
+          "book_id": "b010",
+          "added_date": "2022-09-01",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u005",
+      "name": "Lena",
+      "age": 31,
+      "location": {
+        "city": "Berlin",
+        "country": "Germany",
+        "timezone": "Europe/Berlin"
+      },
+      "member_since": "2021-06-30",
+      "preferences": {
+        "favorite_genres": [
+          "fiction",
+          "drama",
+          "mental-health"
+        ],
+        "disliked_genres": [
+          "sci-fi",
+          "thriller"
+        ],
+        "favorite_authors": [
+          "a021",
+          "a019",
+          "a002"
+        ],
+        "reading_pace": "slow",
+        "preferred_moods": [
+          "dark",
+          "contemplative"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "modern",
+          "classic"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 5,
+        "reading_goal_per_year": 15,
+        "books_read_this_year": 6,
+        "avg_rating_given": 4.2,
+        "longest_streak_days": 30,
+        "most_read_genre": "fiction",
+        "most_read_author_id": "a019"
+      },
+      "books_read": [
+        {
+          "book_id": "b033",
+          "rating": 5,
+          "date_read": "2021-09-12",
+          "did_not_finish": false,
+          "review_snippet": "Destroyed me in the best way.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b028",
+          "rating": 4,
+          "date_read": "2022-01-08",
+          "did_not_finish": false,
+          "review_snippet": "Lyrical.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b003",
+          "rating": 5,
+          "date_read": "2022-03-14",
+          "did_not_finish": false,
+          "review_snippet": "Relatable and sad.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b019",
+          "rating": 3,
+          "date_read": "2022-07-01",
+          "did_not_finish": false,
+          "review_snippet": "Interesting but slow.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b029",
+          "rating": 4,
+          "date_read": "2022-10-21",
+          "did_not_finish": false,
+          "review_snippet": "Stream of consciousness done right.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b030",
+          "added_date": "2022-11-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b027",
+          "added_date": "2023-01-10",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u006",
+      "name": "Tom\u00e1s",
+      "age": 38,
+      "location": {
+        "city": "Buenos Aires",
+        "country": "Argentina",
+        "timezone": "America/Argentina/Buenos_Aires"
+      },
+      "member_since": "2020-02-14",
+      "preferences": {
+        "favorite_genres": [
+          "thriller",
+          "crime",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "poetry",
+          "stream-of-consciousness"
+        ],
+        "favorite_authors": [
+          "a006",
+          "a020",
+          "a008"
+        ],
+        "reading_pace": "fast",
+        "preferred_moods": [
+          "dark",
+          "adventurous"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 4,
+        "reading_goal_per_year": 35,
+        "books_read_this_year": 14,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 60,
+        "most_read_genre": "thriller",
+        "most_read_author_id": "a020"
+      },
+      "books_read": [
+        {
+          "book_id": "b007",
+          "rating": 5,
+          "date_read": "2020-05-20",
+          "did_not_finish": false,
+          "review_snippet": "Gripping.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b031",
+          "rating": 5,
+          "date_read": "2020-11-03",
+          "did_not_finish": false,
+          "review_snippet": "Loved the atmosphere.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b009",
+          "rating": 4,
+          "date_read": "2021-04-19",
+          "did_not_finish": false,
+          "review_snippet": "Bleak and beautiful.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b005",
+          "rating": 4,
+          "date_read": "2021-10-08",
+          "did_not_finish": false,
+          "review_snippet": "Classic for a reason.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b032",
+          "added_date": "2022-01-10",
+          "priority": "high"
+        },
+        {
+          "book_id": "b050",
+          "added_date": "2022-04-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b037",
+          "added_date": "2022-06-15",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u007",
+      "name": "Yuki",
+      "age": 27,
+      "location": {
+        "city": "Tokyo",
+        "country": "Japan",
+        "timezone": "Asia/Tokyo"
+      },
+      "member_since": "2022-04-01",
+      "preferences": {
+        "favorite_genres": [
+          "fiction",
+          "sci-fi",
+          "contemporary"
+        ],
+        "disliked_genres": [
+          "horror",
+          "crime"
+        ],
+        "favorite_authors": [
+          "a007",
+          "a022"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "contemplative",
+          "romantic"
+        ],
+        "preferred_length": "short",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 4,
+        "reading_goal_per_year": 18,
+        "books_read_this_year": 4,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 10,
+        "most_read_genre": "fiction",
+        "most_read_author_id": "a007"
+      },
+      "books_read": [
+        {
+          "book_id": "b016",
+          "rating": 5,
+          "date_read": "2022-05-15",
+          "did_not_finish": false,
+          "review_snippet": "Subtle and moving.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b017",
+          "rating": 4,
+          "date_read": "2022-08-22",
+          "did_not_finish": false,
+          "review_snippet": "Ishiguro is unique.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b034",
+          "rating": 4,
+          "date_read": "2022-11-10",
+          "did_not_finish": false,
+          "review_snippet": "Felt real.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b008",
+          "rating": 5,
+          "date_read": "2023-01-20",
+          "did_not_finish": false,
+          "review_snippet": "Heart-breaking.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b035",
+          "added_date": "2023-01-25",
+          "priority": "high"
+        },
+        {
+          "book_id": "b010",
+          "added_date": "2023-02-01",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u008",
+      "name": "Priya",
+      "age": 33,
+      "location": {
+        "city": "Mumbai",
+        "country": "India",
+        "timezone": "Asia/Kolkata"
+      },
+      "member_since": "2019-08-08",
+      "preferences": {
+        "favorite_genres": [
+          "classic",
+          "romance",
+          "coming-of-age"
+        ],
+        "disliked_genres": [
+          "horror",
+          "crime"
+        ],
+        "favorite_authors": [
+          "a011",
+          "a003",
+          "a010"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "romantic",
+          "uplifting",
+          "contemplative"
+        ],
+        "preferred_length": "medium",
+        "preferred_era": [
+          "classic"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 6,
+        "reading_goal_per_year": 25,
+        "books_read_this_year": 10,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 50,
+        "most_read_genre": "classic",
+        "most_read_author_id": "a011"
+      },
+      "books_read": [
+        {
+          "book_id": "b012",
+          "rating": 5,
+          "date_read": "2019-10-01",
+          "did_not_finish": false,
+          "review_snippet": "Darcy forever.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b013",
+          "rating": 5,
+          "date_read": "2020-01-14",
+          "did_not_finish": false,
+          "review_snippet": "Loved Elinor.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b004",
+          "rating": 5,
+          "date_read": "2020-06-03",
+          "did_not_finish": false,
+          "review_snippet": "A perfect novel.",
+          "format": "hardcover",
+          "reread": true
+        },
+        {
+          "book_id": "b011",
+          "rating": 4,
+          "date_read": "2021-02-28",
+          "did_not_finish": false,
+          "review_snippet": "Wild and Gothic.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b026",
+          "rating": 4,
+          "date_read": "2021-08-11",
+          "did_not_finish": false,
+          "review_snippet": "Gorgeous language.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b036",
+          "rating": 4,
+          "date_read": "2022-03-05",
+          "did_not_finish": false,
+          "review_snippet": "Tragic but beautiful.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b020",
+          "added_date": "2022-05-01",
+          "priority": "medium"
+        },
+        {
+          "book_id": "b029",
+          "added_date": "2022-08-10",
+          "priority": "low"
+        },
+        {
+          "book_id": "b049",
+          "added_date": "2023-01-01",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "user_id": "u009",
+      "name": "Kwame",
+      "age": 45,
+      "location": {
+        "city": "Accra",
+        "country": "Ghana",
+        "timezone": "Africa/Accra"
+      },
+      "member_since": "2018-05-22",
+      "preferences": {
+        "favorite_genres": [
+          "historical",
+          "fiction",
+          "drama"
+        ],
+        "disliked_genres": [
+          "romance",
+          "poetry"
+        ],
+        "favorite_authors": [
+          "a014",
+          "a024",
+          "a015"
+        ],
+        "reading_pace": "slow",
+        "preferred_moods": [
+          "cerebral",
+          "dark",
+          "uplifting"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "classic",
+          "modern"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 7,
+        "reading_goal_per_year": 20,
+        "books_read_this_year": 8,
+        "avg_rating_given": 4.57,
+        "longest_streak_days": 120,
+        "most_read_genre": "historical",
+        "most_read_author_id": "a024"
+      },
+      "books_read": [
+        {
+          "book_id": "b022",
+          "rating": 5,
+          "date_read": "2018-07-04",
+          "did_not_finish": false,
+          "review_snippet": "Essential.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b037",
+          "rating": 5,
+          "date_read": "2019-03-10",
+          "did_not_finish": false,
+          "review_snippet": "Epic and emotional.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b038",
+          "rating": 5,
+          "date_read": "2019-11-15",
+          "did_not_finish": false,
+          "review_snippet": "Heartbreaking.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b023",
+          "rating": 5,
+          "date_read": "2020-06-19",
+          "did_not_finish": false,
+          "review_snippet": "Haunting masterpiece.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b025",
+          "rating": 4,
+          "date_read": "2021-02-01",
+          "did_not_finish": false,
+          "review_snippet": "Empowering.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b039",
+          "rating": 4,
+          "date_read": "2021-09-22",
+          "did_not_finish": false,
+          "review_snippet": "Short but impactful.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b020",
+          "rating": 4,
+          "date_read": "2022-04-14",
+          "did_not_finish": false,
+          "review_snippet": "Ambitious and rewarding.",
+          "format": "ebook",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b047",
+          "added_date": "2022-07-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b048",
+          "added_date": "2022-08-15",
+          "priority": "high"
+        },
+        {
+          "book_id": "b049",
+          "added_date": "2022-10-10",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u010",
+      "name": "Clara",
+      "age": 22,
+      "location": {
+        "city": "Lisbon",
+        "country": "Portugal",
+        "timezone": "Europe/Lisbon"
+      },
+      "member_since": "2023-01-05",
+      "preferences": {
+        "favorite_genres": [
+          "contemporary",
+          "romance",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "sci-fi",
+          "gothic"
+        ],
+        "favorite_authors": [
+          "a022",
+          "a012"
+        ],
+        "reading_pace": "fast",
+        "preferred_moods": [
+          "romantic",
+          "uplifting"
+        ],
+        "preferred_length": "short",
+        "preferred_era": [
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 3,
+        "reading_goal_per_year": 12,
+        "books_read_this_year": 3,
+        "avg_rating_given": 4.0,
+        "longest_streak_days": 7,
+        "most_read_genre": "contemporary",
+        "most_read_author_id": "a022"
+      },
+      "books_read": [
+        {
+          "book_id": "b034",
+          "rating": 5,
+          "date_read": "2023-01-20",
+          "did_not_finish": false,
+          "review_snippet": "Obsessed.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b035",
+          "rating": 4,
+          "date_read": "2023-02-14",
+          "did_not_finish": false,
+          "review_snippet": "Sally Rooney gets it.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b032",
+          "rating": 3,
+          "date_read": "2023-03-10",
+          "did_not_finish": false,
+          "review_snippet": "A bit long but good.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b019",
+          "added_date": "2023-03-15",
+          "priority": "high"
+        },
+        {
+          "book_id": "b045",
+          "added_date": "2023-03-20",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u011",
+      "name": "Dimitri",
+      "age": 50,
+      "location": {
+        "city": "Athens",
+        "country": "Greece",
+        "timezone": "Europe/Athens"
+      },
+      "member_since": "2017-09-01",
+      "preferences": {
+        "favorite_genres": [
+          "classic",
+          "historical",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "contemporary",
+          "romance"
+        ],
+        "favorite_authors": [
+          "a029",
+          "a031",
+          "a024"
+        ],
+        "reading_pace": "slow",
+        "preferred_moods": [
+          "cerebral",
+          "contemplative"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "classic"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 10,
+        "reading_goal_per_year": 15,
+        "books_read_this_year": 9,
+        "avg_rating_given": 4.1,
+        "longest_streak_days": 200,
+        "most_read_genre": "classic",
+        "most_read_author_id": "a024"
+      },
+      "books_read": [
+        {
+          "book_id": "b048",
+          "rating": 4,
+          "date_read": "2017-11-01",
+          "did_not_finish": false,
+          "review_snippet": "A foundational postcolonial text.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b050",
+          "rating": 5,
+          "date_read": "2018-03-14",
+          "did_not_finish": false,
+          "review_snippet": "Umberto Eco is a genius.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b037",
+          "rating": 5,
+          "date_read": "2018-10-22",
+          "did_not_finish": false,
+          "review_snippet": "Biblical and sweeping.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b038",
+          "rating": 4,
+          "date_read": "2019-04-10",
+          "did_not_finish": false,
+          "review_snippet": "American tragedy.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b039",
+          "rating": 4,
+          "date_read": "2019-08-30",
+          "did_not_finish": false,
+          "review_snippet": "Deceptively simple.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b022",
+          "rating": 5,
+          "date_read": "2020-02-18",
+          "did_not_finish": false,
+          "review_snippet": "Required reading.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b036",
+          "rating": 4,
+          "date_read": "2020-09-05",
+          "did_not_finish": false,
+          "review_snippet": "The green light endures.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b021",
+          "rating": 3,
+          "date_read": "2021-01-20",
+          "did_not_finish": false,
+          "review_snippet": "Overrated but interesting.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b029",
+          "rating": 4,
+          "date_read": "2021-08-14",
+          "did_not_finish": false,
+          "review_snippet": "Woolf is singular.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b030",
+          "rating": 4,
+          "date_read": "2022-03-10",
+          "did_not_finish": false,
+          "review_snippet": "The lighthouse is life itself.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b023",
+          "added_date": "2022-05-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b020",
+          "added_date": "2022-07-10",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u012",
+      "name": "Mei",
+      "age": 29,
+      "location": {
+        "city": "Singapore",
+        "country": "Singapore",
+        "timezone": "Asia/Singapore"
+      },
+      "member_since": "2021-11-11",
+      "preferences": {
+        "favorite_genres": [
+          "sci-fi",
+          "feminist",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "crime",
+          "gothic"
+        ],
+        "favorite_authors": [
+          "a026",
+          "a027",
+          "a001"
+        ],
+        "reading_pace": "fast",
+        "preferred_moods": [
+          "cerebral",
+          "adventurous",
+          "dark"
+        ],
+        "preferred_length": "medium",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 6,
+        "reading_goal_per_year": 30,
+        "books_read_this_year": 11,
+        "avg_rating_given": 4.33,
+        "longest_streak_days": 40,
+        "most_read_genre": "sci-fi",
+        "most_read_author_id": "a026"
+      },
+      "books_read": [
+        {
+          "book_id": "b041",
+          "rating": 5,
+          "date_read": "2021-12-01",
+          "did_not_finish": false,
+          "review_snippet": "Gender and society unpacked.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b042",
+          "rating": 5,
+          "date_read": "2022-01-20",
+          "did_not_finish": false,
+          "review_snippet": "Utopia vs anarchy.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b043",
+          "rating": 4,
+          "date_read": "2022-03-15",
+          "did_not_finish": false,
+          "review_snippet": "Time travel with purpose.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b044",
+          "rating": 5,
+          "date_read": "2022-06-10",
+          "did_not_finish": false,
+          "review_snippet": "Prophetic and urgent.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b001",
+          "rating": 4,
+          "date_read": "2022-09-08",
+          "did_not_finish": false,
+          "review_snippet": "Essential feminist sci-fi.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b010",
+          "rating": 4,
+          "date_read": "2022-12-20",
+          "did_not_finish": false,
+          "review_snippet": "Quietly devastating.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b014",
+          "added_date": "2023-01-10",
+          "priority": "high"
+        },
+        {
+          "book_id": "b017",
+          "added_date": "2023-02-01",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u013",
+      "name": "Rafael",
+      "age": 36,
+      "location": {
+        "city": "S\u00e3o Paulo",
+        "country": "Brazil",
+        "timezone": "America/Sao_Paulo"
+      },
+      "member_since": "2020-05-05",
+      "preferences": {
+        "favorite_genres": [
+          "historical",
+          "drama",
+          "coming-of-age"
+        ],
+        "disliked_genres": [
+          "poetry",
+          "mental-health"
+        ],
+        "favorite_authors": [
+          "a028",
+          "a030",
+          "a029"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "uplifting",
+          "cerebral",
+          "dark"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 6,
+        "reading_goal_per_year": 22,
+        "books_read_this_year": 9,
+        "avg_rating_given": 4.5,
+        "longest_streak_days": 35,
+        "most_read_genre": "historical",
+        "most_read_author_id": "a028"
+      },
+      "books_read": [
+        {
+          "book_id": "b045",
+          "rating": 5,
+          "date_read": "2020-07-01",
+          "did_not_finish": false,
+          "review_snippet": "Nuanced and powerful.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b046",
+          "rating": 4,
+          "date_read": "2020-10-15",
+          "did_not_finish": false,
+          "review_snippet": "A difficult and brave debut.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b047",
+          "rating": 5,
+          "date_read": "2021-03-22",
+          "did_not_finish": false,
+          "review_snippet": "Devastating.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b049",
+          "rating": 5,
+          "date_read": "2021-09-14",
+          "did_not_finish": false,
+          "review_snippet": "Multigenerational epic.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b020",
+          "rating": 4,
+          "date_read": "2022-02-08",
+          "did_not_finish": false,
+          "review_snippet": "Pulitzer well deserved.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b022",
+          "rating": 4,
+          "date_read": "2022-08-01",
+          "did_not_finish": false,
+          "review_snippet": "A classic.",
+          "format": "ebook",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b023",
+          "added_date": "2022-09-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b037",
+          "added_date": "2022-10-20",
+          "priority": "high"
+        },
+        {
+          "book_id": "b048",
+          "added_date": "2023-01-05",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u014",
+      "name": "Aisha",
+      "age": 24,
+      "location": {
+        "city": "Nairobi",
+        "country": "Kenya",
+        "timezone": "Africa/Nairobi"
+      },
+      "member_since": "2022-09-01",
+      "preferences": {
+        "favorite_genres": [
+          "fiction",
+          "feminist",
+          "contemporary"
+        ],
+        "disliked_genres": [
+          "gothic",
+          "stream-of-consciousness"
+        ],
+        "favorite_authors": [
+          "a028",
+          "a016",
+          "a022"
+        ],
+        "reading_pace": "medium",
+        "preferred_moods": [
+          "uplifting",
+          "romantic",
+          "cerebral"
+        ],
+        "preferred_length": "medium",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 4,
+        "reading_goal_per_year": 16,
+        "books_read_this_year": 4,
+        "avg_rating_given": 4.25,
+        "longest_streak_days": 12,
+        "most_read_genre": "fiction",
+        "most_read_author_id": "a028"
+      },
+      "books_read": [
+        {
+          "book_id": "b045",
+          "rating": 5,
+          "date_read": "2022-10-05",
+          "did_not_finish": false,
+          "review_snippet": "Finally felt seen.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b025",
+          "rating": 4,
+          "date_read": "2022-11-20",
+          "did_not_finish": false,
+          "review_snippet": "Moving and fierce.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b034",
+          "rating": 4,
+          "date_read": "2023-01-10",
+          "did_not_finish": false,
+          "review_snippet": "Very relatable.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b046",
+          "rating": 4,
+          "date_read": "2023-02-28",
+          "did_not_finish": false,
+          "review_snippet": "Beautifully written.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b047",
+          "added_date": "2023-03-01",
+          "priority": "high"
+        },
+        {
+          "book_id": "b033",
+          "added_date": "2023-03-10",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "user_id": "u015",
+      "name": "Ingrid",
+      "age": 44,
+      "location": {
+        "city": "Stockholm",
+        "country": "Sweden",
+        "timezone": "Europe/Stockholm"
+      },
+      "member_since": "2018-12-01",
+      "preferences": {
+        "favorite_genres": [
+          "crime",
+          "thriller",
+          "fiction"
+        ],
+        "disliked_genres": [
+          "romance",
+          "poetry"
+        ],
+        "favorite_authors": [
+          "a006",
+          "a020",
+          "a031"
+        ],
+        "reading_pace": "fast",
+        "preferred_moods": [
+          "dark",
+          "cerebral",
+          "adventurous"
+        ],
+        "preferred_length": "long",
+        "preferred_era": [
+          "modern",
+          "contemporary"
+        ]
+      },
+      "reading_stats": {
+        "total_books_read": 8,
+        "reading_goal_per_year": 45,
+        "books_read_this_year": 20,
+        "avg_rating_given": 4.0,
+        "longest_streak_days": 180,
+        "most_read_genre": "thriller",
+        "most_read_author_id": "a020"
+      },
+      "books_read": [
+        {
+          "book_id": "b007",
+          "rating": 5,
+          "date_read": "2019-01-10",
+          "did_not_finish": false,
+          "review_snippet": "Best crime novel I've read.",
+          "format": "paperback",
+          "reread": true
+        },
+        {
+          "book_id": "b031",
+          "rating": 5,
+          "date_read": "2019-06-14",
+          "did_not_finish": false,
+          "review_snippet": "Atmospheric and brilliant.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b032",
+          "rating": 4,
+          "date_read": "2019-12-01",
+          "did_not_finish": false,
+          "review_snippet": "Dense but rewarding.",
+          "format": "hardcover",
+          "reread": false
+        },
+        {
+          "book_id": "b050",
+          "rating": 4,
+          "date_read": "2020-05-20",
+          "did_not_finish": false,
+          "review_snippet": "Labyrinthine and fun.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b005",
+          "rating": 4,
+          "date_read": "2020-10-08",
+          "did_not_finish": false,
+          "review_snippet": "A must.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b009",
+          "rating": 5,
+          "date_read": "2021-03-22",
+          "did_not_finish": false,
+          "review_snippet": "Harrowing.",
+          "format": "paperback",
+          "reread": false
+        },
+        {
+          "book_id": "b006",
+          "rating": 3,
+          "date_read": "2021-09-11",
+          "did_not_finish": false,
+          "review_snippet": "Good but overrated.",
+          "format": "ebook",
+          "reread": false
+        },
+        {
+          "book_id": "b040",
+          "rating": 3,
+          "date_read": "2022-04-01",
+          "did_not_finish": false,
+          "review_snippet": "Too short.",
+          "format": "paperback",
+          "reread": false
+        }
+      ],
+      "wishlist": [
+        {
+          "book_id": "b043",
+          "added_date": "2022-08-01",
+          "priority": "medium"
+        },
+        {
+          "book_id": "b049",
+          "added_date": "2022-09-15",
+          "priority": "high"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+name: book-recommendation
+channels:
+  - defaults
+prefix: /home/kayode/anaconda3/envs/book-recommendation
