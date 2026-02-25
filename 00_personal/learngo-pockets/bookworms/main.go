@@ -13,5 +13,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(findCommonBooks(bookworms))
+	displayBooks(findCommonBooks(bookworms))
 }
