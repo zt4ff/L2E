@@ -77,22 +77,39 @@ func TestParsingJson(t *testing.T) {
 			want:    []Book{handmaidsTale, orxyAndCrake, theBellJar, janeEyre},
 			wantErr: false,
 		},
+		"invalid json": {
+			input:   "testdata/invalid.json",
+			want:    []Book{},
+			wantErr: true,
+		},
+		"non existent json": {
+			input:   "testdata/invalid.json",
+			want:    []Book{},
+			wantErr: true,
+		},
 	}
 
 	for name, testcase := range testcases {
 		t.Run(name, func(t *testing.T) {
 			bookDatabase, err := parseJson(testcase.input)
 
+			if testcase.wantErr && err != nil {
+				return
+			}
+
 			if testcase.wantErr && err == nil {
 				t.Fatalf("expected error but got no error")
+				return
 			}
 
 			if !testcase.wantErr && err != nil {
 				t.Fatalf("expected no error but got error: %v", err)
+				return
 			}
 
 			if !reflect.DeepEqual(bookDatabase.Books, testcase.want) {
 				t.Fatalf("books don't match, expect %v but got %v", testcase.want, bookDatabase.Books)
+				return
 			}
 		})
 	}
