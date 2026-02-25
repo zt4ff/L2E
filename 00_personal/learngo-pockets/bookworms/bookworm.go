@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"os"
+	"sort"
 )
 
 type Bookworm struct {
@@ -56,4 +57,15 @@ func findCommonBooks(bookworms []Bookworm) []Book {
 	}
 
 	return commonBooks
+}
+
+func sortBooks(books []Book) []Book {
+	sort.Slice(books, func(i, j int) bool {
+		if books[i].Author != books[j].Author {
+			return books[i].Author < books[j].Author
+		}
+		return books[i].Title < books[j].Title
+	})
+
+	return books
 }
