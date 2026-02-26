@@ -1,0 +1,1902 @@
+{
+  "model": {
+    "algorithm": "hybrid (user-based CF + content-based)",
+    "cf_weight": 0.6,
+    "content_weight": 0.4,
+    "similarity_metric": "cosine",
+    "rmse_cf": 0.863,
+    "rmse_hybrid": 0.4738
+  },
+  "bookworms": [
+    {
+      "user_id": "u001",
+      "name": "Fadi",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b042",
+          "title": "The Dispossessed",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "dystopia"
+          ],
+          "year": 1974,
+          "pages": 341,
+          "avg_rating": 4.2,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b044",
+          "title": "Parable of the Sower",
+          "author": "Octavia Butler",
+          "genres": [
+            "dystopia",
+            "sci-fi",
+            "fiction"
+          ],
+          "year": 1993,
+          "pages": 345,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 3,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.52
+        },
+        {
+          "rank": 4,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 5,
+          "book_id": "b004",
+          "title": "Jane Eyre",
+          "author": "Charlotte Bront\u00eb",
+          "genres": [
+            "classic",
+            "romance",
+            "fiction"
+          ],
+          "year": 1847,
+          "pages": 532,
+          "avg_rating": 4.2,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 6,
+          "book_id": "b010",
+          "title": "Station Eleven",
+          "author": "Emily St. John Mandel",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "sci-fi"
+          ],
+          "year": 2014,
+          "pages": 333,
+          "avg_rating": 4.0,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 7,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 8,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.26
+        }
+      ]
+    },
+    {
+      "user_id": "u002",
+      "name": "Peggy",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b012",
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "genres": [
+            "classic",
+            "romance",
+            "fiction"
+          ],
+          "year": 1813,
+          "pages": 432,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b013",
+          "title": "Sense and Sensibility",
+          "author": "Jane Austen",
+          "genres": [
+            "classic",
+            "romance",
+            "fiction"
+          ],
+          "year": 1811,
+          "pages": 374,
+          "avg_rating": 4.1,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 3,
+          "book_id": "b042",
+          "title": "The Dispossessed",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "dystopia"
+          ],
+          "year": 1974,
+          "pages": 341,
+          "avg_rating": 4.2,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 4,
+          "book_id": "b044",
+          "title": "Parable of the Sower",
+          "author": "Octavia Butler",
+          "genres": [
+            "dystopia",
+            "sci-fi",
+            "fiction"
+          ],
+          "year": 1993,
+          "pages": 345,
+          "avg_rating": 4.3,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 5,
+          "book_id": "b026",
+          "title": "Their Eyes Were Watching God",
+          "author": "Zora Neale Hurston",
+          "genres": [
+            "classic",
+            "fiction",
+            "romance"
+          ],
+          "year": 1937,
+          "pages": 286,
+          "avg_rating": 4.1,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 6,
+          "book_id": "b011",
+          "title": "Wuthering Heights",
+          "author": "Emily Bront\u00eb",
+          "genres": [
+            "classic",
+            "romance",
+            "gothic"
+          ],
+          "year": 1847,
+          "pages": 342,
+          "avg_rating": 3.8,
+          "predicted_score": 4.28
+        },
+        {
+          "rank": 7,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.22
+        },
+        {
+          "rank": 8,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        }
+      ]
+    },
+    {
+      "user_id": "u003",
+      "name": "Amara",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b038",
+          "title": "The Grapes of Wrath",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "historical"
+          ],
+          "year": 1939,
+          "pages": 464,
+          "avg_rating": 4.0,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b037",
+          "title": "East of Eden",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "drama"
+          ],
+          "year": 1952,
+          "pages": 601,
+          "avg_rating": 4.3,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 3,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.52
+        },
+        {
+          "rank": 4,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 5,
+          "book_id": "b020",
+          "title": "Middlesex",
+          "author": "Jeffrey Eugenides",
+          "genres": [
+            "fiction",
+            "historical",
+            "coming-of-age"
+          ],
+          "year": 2002,
+          "pages": 529,
+          "avg_rating": 4.1,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 6,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.26
+        },
+        {
+          "rank": 7,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 8,
+          "book_id": "b034",
+          "title": "Normal People",
+          "author": "Sally Rooney",
+          "genres": [
+            "fiction",
+            "romance",
+            "contemporary"
+          ],
+          "year": 2018,
+          "pages": 273,
+          "avg_rating": 3.9,
+          "predicted_score": 4.0
+        }
+      ]
+    },
+    {
+      "user_id": "u004",
+      "name": "Soren",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b016",
+          "title": "The Remains of the Day",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "fiction",
+            "classic",
+            "drama"
+          ],
+          "year": 1989,
+          "pages": 258,
+          "avg_rating": 4.0,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 2,
+          "book_id": "b007",
+          "title": "The Power of the Dog",
+          "author": "Don Winslow",
+          "genres": [
+            "thriller",
+            "crime",
+            "fiction"
+          ],
+          "year": 2005,
+          "pages": 544,
+          "avg_rating": 4.3,
+          "predicted_score": 4.2
+        },
+        {
+          "rank": 3,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 4.2
+        },
+        {
+          "rank": 4,
+          "book_id": "b031",
+          "title": "The Secret History",
+          "author": "Donna Tartt",
+          "genres": [
+            "fiction",
+            "thriller",
+            "coming-of-age"
+          ],
+          "year": 1992,
+          "pages": 559,
+          "avg_rating": 4.1,
+          "predicted_score": 4.2
+        },
+        {
+          "rank": 5,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 6,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 7,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        },
+        {
+          "rank": 8,
+          "book_id": "b017",
+          "title": "Klara and the Sun",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "drama"
+          ],
+          "year": 2021,
+          "pages": 307,
+          "avg_rating": 3.9,
+          "predicted_score": 3.94
+        }
+      ]
+    },
+    {
+      "user_id": "u005",
+      "name": "Lena",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b022",
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "genres": [
+            "classic",
+            "fiction",
+            "drama"
+          ],
+          "year": 1960,
+          "pages": 281,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b030",
+          "title": "To the Lighthouse",
+          "author": "Virginia Woolf",
+          "genres": [
+            "classic",
+            "fiction",
+            "stream-of-consciousness"
+          ],
+          "year": 1927,
+          "pages": 209,
+          "avg_rating": 3.9,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 3,
+          "book_id": "b039",
+          "title": "Of Mice and Men",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "drama"
+          ],
+          "year": 1937,
+          "pages": 112,
+          "avg_rating": 3.9,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 4,
+          "book_id": "b050",
+          "title": "The Name of the Rose",
+          "author": "Umberto Eco",
+          "genres": [
+            "historical",
+            "thriller",
+            "fiction"
+          ],
+          "year": 1980,
+          "pages": 502,
+          "avg_rating": 4.1,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 5,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.32
+        },
+        {
+          "rank": 6,
+          "book_id": "b017",
+          "title": "Klara and the Sun",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "drama"
+          ],
+          "year": 2021,
+          "pages": 307,
+          "avg_rating": 3.9,
+          "predicted_score": 4.14
+        },
+        {
+          "rank": 7,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 8,
+          "book_id": "b038",
+          "title": "The Grapes of Wrath",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "historical"
+          ],
+          "year": 1939,
+          "pages": 464,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        }
+      ]
+    },
+    {
+      "user_id": "u006",
+      "name": "Tom\u00e1s",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 2,
+          "book_id": "b032",
+          "title": "The Goldfinch",
+          "author": "Donna Tartt",
+          "genres": [
+            "fiction",
+            "drama",
+            "coming-of-age"
+          ],
+          "year": 2013,
+          "pages": 771,
+          "avg_rating": 3.9,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 3,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 4,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        },
+        {
+          "rank": 5,
+          "book_id": "b002",
+          "title": "Oryx and Crake",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2003,
+          "pages": 374,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 6,
+          "book_id": "b008",
+          "title": "Never Let Me Go",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "sci-fi"
+          ],
+          "year": 2005,
+          "pages": 288,
+          "avg_rating": 3.8,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 7,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 8,
+          "book_id": "b017",
+          "title": "Klara and the Sun",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "drama"
+          ],
+          "year": 2021,
+          "pages": 307,
+          "avg_rating": 3.9,
+          "predicted_score": 3.94
+        }
+      ]
+    },
+    {
+      "user_id": "u007",
+      "name": "Yuki",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b005",
+          "title": "1984",
+          "author": "George Orwell",
+          "genres": [
+            "dystopia",
+            "classic",
+            "sci-fi"
+          ],
+          "year": 1949,
+          "pages": 328,
+          "avg_rating": 4.2,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 2,
+          "book_id": "b009",
+          "title": "The Road",
+          "author": "Cormac McCarthy",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "survival"
+          ],
+          "year": 2006,
+          "pages": 287,
+          "avg_rating": 4.0,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 3,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 4,
+          "book_id": "b002",
+          "title": "Oryx and Crake",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2003,
+          "pages": 374,
+          "avg_rating": 4.0,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 5,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 6,
+          "book_id": "b035",
+          "title": "Conversations with Friends",
+          "author": "Sally Rooney",
+          "genres": [
+            "fiction",
+            "romance",
+            "contemporary"
+          ],
+          "year": 2017,
+          "pages": 304,
+          "avg_rating": 3.7,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 7,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 8,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        }
+      ]
+    },
+    {
+      "user_id": "u008",
+      "name": "Priya",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b001",
+          "title": "The Handmaid's Tale",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1985,
+          "pages": 311,
+          "avg_rating": 4.1,
+          "predicted_score": 4.2
+        },
+        {
+          "rank": 2,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 3,
+          "book_id": "b021",
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "genres": [
+            "classic",
+            "fiction",
+            "coming-of-age"
+          ],
+          "year": 1951,
+          "pages": 224,
+          "avg_rating": 3.8,
+          "predicted_score": 3.8
+        },
+        {
+          "rank": 4,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 3.72
+        },
+        {
+          "rank": 5,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 3.66
+        },
+        {
+          "rank": 6,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 3.66
+        },
+        {
+          "rank": 7,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 3.6
+        },
+        {
+          "rank": 8,
+          "book_id": "b020",
+          "title": "Middlesex",
+          "author": "Jeffrey Eugenides",
+          "genres": [
+            "fiction",
+            "historical",
+            "coming-of-age"
+          ],
+          "year": 2002,
+          "pages": 529,
+          "avg_rating": 4.1,
+          "predicted_score": 3.6
+        }
+      ]
+    },
+    {
+      "user_id": "u009",
+      "name": "Kwame",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b047",
+          "title": "Half of a Yellow Sun",
+          "author": "Chimamanda Ngozi Adichie",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 2006,
+          "pages": 433,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b049",
+          "title": "Pachinko",
+          "author": "Min Jin Lee",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 2017,
+          "pages": 485,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 3,
+          "book_id": "b050",
+          "title": "The Name of the Rose",
+          "author": "Umberto Eco",
+          "genres": [
+            "historical",
+            "thriller",
+            "fiction"
+          ],
+          "year": 1980,
+          "pages": 502,
+          "avg_rating": 4.1,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 4,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 5,
+          "book_id": "b024",
+          "title": "Sula",
+          "author": "Toni Morrison",
+          "genres": [
+            "fiction",
+            "drama",
+            "classic"
+          ],
+          "year": 1973,
+          "pages": 174,
+          "avg_rating": 3.9,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 6,
+          "book_id": "b045",
+          "title": "Americanah",
+          "author": "Chimamanda Ngozi Adichie",
+          "genres": [
+            "fiction",
+            "contemporary",
+            "romance"
+          ],
+          "year": 2013,
+          "pages": 477,
+          "avg_rating": 4.2,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 7,
+          "book_id": "b046",
+          "title": "Purple Hibiscus",
+          "author": "Chimamanda Ngozi Adichie",
+          "genres": [
+            "fiction",
+            "coming-of-age",
+            "drama"
+          ],
+          "year": 2003,
+          "pages": 307,
+          "avg_rating": 4.0,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 8,
+          "book_id": "b048",
+          "title": "Things Fall Apart",
+          "author": "Chinua Achebe",
+          "genres": [
+            "classic",
+            "historical",
+            "fiction"
+          ],
+          "year": 1958,
+          "pages": 209,
+          "avg_rating": 3.9,
+          "predicted_score": 4.4
+        }
+      ]
+    },
+    {
+      "user_id": "u010",
+      "name": "Clara",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b016",
+          "title": "The Remains of the Day",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "fiction",
+            "classic",
+            "drama"
+          ],
+          "year": 1989,
+          "pages": 258,
+          "avg_rating": 4.0,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 2,
+          "book_id": "b008",
+          "title": "Never Let Me Go",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "sci-fi"
+          ],
+          "year": 2005,
+          "pages": 288,
+          "avg_rating": 3.8,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 3,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 4,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        },
+        {
+          "rank": 5,
+          "book_id": "b025",
+          "title": "The Color Purple",
+          "author": "Alice Walker",
+          "genres": [
+            "fiction",
+            "classic",
+            "feminist"
+          ],
+          "year": 1982,
+          "pages": 286,
+          "avg_rating": 4.2,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 6,
+          "book_id": "b046",
+          "title": "Purple Hibiscus",
+          "author": "Chimamanda Ngozi Adichie",
+          "genres": [
+            "fiction",
+            "coming-of-age",
+            "drama"
+          ],
+          "year": 2003,
+          "pages": 307,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 7,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 3.86
+        },
+        {
+          "rank": 8,
+          "book_id": "b004",
+          "title": "Jane Eyre",
+          "author": "Charlotte Bront\u00eb",
+          "genres": [
+            "classic",
+            "romance",
+            "fiction"
+          ],
+          "year": 1847,
+          "pages": 532,
+          "avg_rating": 4.2,
+          "predicted_score": 3.8
+        }
+      ]
+    },
+    {
+      "user_id": "u011",
+      "name": "Dimitri",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b023",
+          "title": "Beloved",
+          "author": "Toni Morrison",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 1987,
+          "pages": 321,
+          "avg_rating": 3.9,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b033",
+          "title": "A Little Life",
+          "author": "Hanya Yanagihara",
+          "genres": [
+            "fiction",
+            "drama",
+            "mental-health"
+          ],
+          "year": 2015,
+          "pages": 720,
+          "avg_rating": 4.3,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 3,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 4,
+          "book_id": "b020",
+          "title": "Middlesex",
+          "author": "Jeffrey Eugenides",
+          "genres": [
+            "fiction",
+            "historical",
+            "coming-of-age"
+          ],
+          "year": 2002,
+          "pages": 529,
+          "avg_rating": 4.1,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 5,
+          "book_id": "b025",
+          "title": "The Color Purple",
+          "author": "Alice Walker",
+          "genres": [
+            "fiction",
+            "classic",
+            "feminist"
+          ],
+          "year": 1982,
+          "pages": 286,
+          "avg_rating": 4.2,
+          "predicted_score": 4.4
+        },
+        {
+          "rank": 6,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 7,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 8,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        }
+      ]
+    },
+    {
+      "user_id": "u012",
+      "name": "Mei",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b004",
+          "title": "Jane Eyre",
+          "author": "Charlotte Bront\u00eb",
+          "genres": [
+            "classic",
+            "romance",
+            "fiction"
+          ],
+          "year": 1847,
+          "pages": 532,
+          "avg_rating": 4.2,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 2,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.52
+        },
+        {
+          "rank": 3,
+          "book_id": "b017",
+          "title": "Klara and the Sun",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "drama"
+          ],
+          "year": 2021,
+          "pages": 307,
+          "avg_rating": 3.9,
+          "predicted_score": 4.34
+        },
+        {
+          "rank": 4,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 4.2
+        },
+        {
+          "rank": 5,
+          "book_id": "b027",
+          "title": "Ariel",
+          "author": "Sylvia Plath",
+          "genres": [
+            "poetry",
+            "classic",
+            "feminist"
+          ],
+          "year": 1965,
+          "pages": 86,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 6,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        },
+        {
+          "rank": 7,
+          "book_id": "b003",
+          "title": "The Bell Jar",
+          "author": "Sylvia Plath",
+          "genres": [
+            "fiction",
+            "classic",
+            "mental-health"
+          ],
+          "year": 1963,
+          "pages": 244,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 8,
+          "book_id": "b008",
+          "title": "Never Let Me Go",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "sci-fi"
+          ],
+          "year": 2005,
+          "pages": 288,
+          "avg_rating": 3.8,
+          "predicted_score": 3.8
+        }
+      ]
+    },
+    {
+      "user_id": "u013",
+      "name": "Rafael",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b023",
+          "title": "Beloved",
+          "author": "Toni Morrison",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 1987,
+          "pages": 321,
+          "avg_rating": 3.9,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b037",
+          "title": "East of Eden",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "drama"
+          ],
+          "year": 1952,
+          "pages": 601,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 3,
+          "book_id": "b038",
+          "title": "The Grapes of Wrath",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "historical"
+          ],
+          "year": 1939,
+          "pages": 464,
+          "avg_rating": 4.0,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 4,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        },
+        {
+          "rank": 5,
+          "book_id": "b039",
+          "title": "Of Mice and Men",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "drama"
+          ],
+          "year": 1937,
+          "pages": 112,
+          "avg_rating": 3.9,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 6,
+          "book_id": "b017",
+          "title": "Klara and the Sun",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "drama"
+          ],
+          "year": 2021,
+          "pages": 307,
+          "avg_rating": 3.9,
+          "predicted_score": 3.94
+        },
+        {
+          "rank": 7,
+          "book_id": "b032",
+          "title": "The Goldfinch",
+          "author": "Donna Tartt",
+          "genres": [
+            "fiction",
+            "drama",
+            "coming-of-age"
+          ],
+          "year": 2013,
+          "pages": 771,
+          "avg_rating": 3.9,
+          "predicted_score": 3.8
+        },
+        {
+          "rank": 8,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 3.72
+        }
+      ]
+    },
+    {
+      "user_id": "u014",
+      "name": "Aisha",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b047",
+          "title": "Half of a Yellow Sun",
+          "author": "Chimamanda Ngozi Adichie",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 2006,
+          "pages": 433,
+          "avg_rating": 4.3,
+          "predicted_score": 5.0
+        },
+        {
+          "rank": 2,
+          "book_id": "b008",
+          "title": "Never Let Me Go",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "sci-fi"
+          ],
+          "year": 2005,
+          "pages": 288,
+          "avg_rating": 3.8,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 3,
+          "book_id": "b016",
+          "title": "The Remains of the Day",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "fiction",
+            "classic",
+            "drama"
+          ],
+          "year": 1989,
+          "pages": 258,
+          "avg_rating": 4.0,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 4,
+          "book_id": "b023",
+          "title": "Beloved",
+          "author": "Toni Morrison",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 1987,
+          "pages": 321,
+          "avg_rating": 3.9,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 5,
+          "book_id": "b037",
+          "title": "East of Eden",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "drama"
+          ],
+          "year": 1952,
+          "pages": 601,
+          "avg_rating": 4.3,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 6,
+          "book_id": "b038",
+          "title": "The Grapes of Wrath",
+          "author": "John Steinbeck",
+          "genres": [
+            "classic",
+            "fiction",
+            "historical"
+          ],
+          "year": 1939,
+          "pages": 464,
+          "avg_rating": 4.0,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 7,
+          "book_id": "b049",
+          "title": "Pachinko",
+          "author": "Min Jin Lee",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 2017,
+          "pages": 485,
+          "avg_rating": 4.3,
+          "predicted_score": 4.6
+        },
+        {
+          "rank": 8,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.52
+        }
+      ]
+    },
+    {
+      "user_id": "u015",
+      "name": "Ingrid",
+      "recommendations": [
+        {
+          "rank": 1,
+          "book_id": "b018",
+          "title": "Alias Grace",
+          "author": "Margaret Atwood",
+          "genres": [
+            "historical",
+            "fiction",
+            "thriller"
+          ],
+          "year": 1996,
+          "pages": 468,
+          "avg_rating": 4.1,
+          "predicted_score": 4.46
+        },
+        {
+          "rank": 2,
+          "book_id": "b014",
+          "title": "The Testaments",
+          "author": "Margaret Atwood",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "feminist"
+          ],
+          "year": 2019,
+          "pages": 419,
+          "avg_rating": 4.2,
+          "predicted_score": 4.12
+        },
+        {
+          "rank": 3,
+          "book_id": "b041",
+          "title": "The Left Hand of Darkness",
+          "author": "Ursula K. Le Guin",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "feminist"
+          ],
+          "year": 1969,
+          "pages": 304,
+          "avg_rating": 4.1,
+          "predicted_score": 4.06
+        },
+        {
+          "rank": 4,
+          "book_id": "b002",
+          "title": "Oryx and Crake",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2003,
+          "pages": 374,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 5,
+          "book_id": "b008",
+          "title": "Never Let Me Go",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "dystopia",
+            "fiction",
+            "sci-fi"
+          ],
+          "year": 2005,
+          "pages": 288,
+          "avg_rating": 3.8,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 6,
+          "book_id": "b015",
+          "title": "MaddAddam",
+          "author": "Margaret Atwood",
+          "genres": [
+            "sci-fi",
+            "dystopia",
+            "fiction"
+          ],
+          "year": 2013,
+          "pages": 394,
+          "avg_rating": 4.0,
+          "predicted_score": 4.0
+        },
+        {
+          "rank": 7,
+          "book_id": "b017",
+          "title": "Klara and the Sun",
+          "author": "Kazuo Ishiguro",
+          "genres": [
+            "sci-fi",
+            "fiction",
+            "drama"
+          ],
+          "year": 2021,
+          "pages": 307,
+          "avg_rating": 3.9,
+          "predicted_score": 3.94
+        },
+        {
+          "rank": 8,
+          "book_id": "b049",
+          "title": "Pachinko",
+          "author": "Min Jin Lee",
+          "genres": [
+            "historical",
+            "fiction",
+            "drama"
+          ],
+          "year": 2017,
+          "pages": 485,
+          "avg_rating": 4.3,
+          "predicted_score": 3.8
+        }
+      ]
+    }
+  ]
+}
