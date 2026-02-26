@@ -20,6 +20,16 @@ type Book struct {
 	Isbn      string   `json:"isbn"`
 }
 
+type BookRead struct {
+	BookID        string `json:"book_id"`
+	Rating        int    `json:"rating"`
+	DateRead      string `json:"date_read"`
+	DidNotFinish  bool   `json:"did_not_finish"`
+	ReviewSnippet string `json:"review_snippet"`
+	Format        string `json:"format"`
+	Reread        bool   `json:"reread"`
+}
+
 type Bookworm struct {
 	UserID   string `json:"user_id"`
 	Name     string `json:"name"`
@@ -48,16 +58,8 @@ type Bookworm struct {
 		MostReadGenre      string  `json:"most_read_genre"`
 		MostReadAuthorID   string  `json:"most_read_author_id"`
 	} `json:"reading_stats"`
-	BooksRead []struct {
-		BookID        string `json:"book_id"`
-		Rating        int    `json:"rating"`
-		DateRead      string `json:"date_read"`
-		DidNotFinish  bool   `json:"did_not_finish"`
-		ReviewSnippet string `json:"review_snippet"`
-		Format        string `json:"format"`
-		Reread        bool   `json:"reread"`
-	} `json:"books_read"`
-	Wishlist []struct {
+	BooksRead []BookRead `json:"books_read"`
+	Wishlist  []struct {
 		BookID    string `json:"book_id"`
 		AddedDate string `json:"added_date"`
 		Priority  string `json:"priority"`
@@ -94,6 +96,35 @@ func parseJson(path string) (BookDatabase, error) {
 	return bookDatabase, nil
 }
 
+// gets a struct of books read with the number of their appearance across bookworms
+func getBooksDir(bookworms []Bookworm) map[string]int {
+	booksDir := make(map[string]int)
+
+	for _, bookworm := range bookworms {
+		for _, bookRead := range bookworm.BooksRead {
+			booksDir[bookRead.BookID]++
+		}
+	}
+
+	return booksDir
+}
+
+func getBookbyId(id string, bookDatabase BookDatabase) (Book, bool) {
+	for _, book := range bookDatabase.Books {
+		if id == book.BookID {
+			return book, true
+		}
+	}
+	return Book{}, false
+}
+
+func displayBooks(books []Book) {
+	fmt.Print("Common books found with bookworms \n\n")
+	for _, book := range books {
+		fmt.Printf("Book - %s by %s\n", book.Title, book.Author)
+	}
+}
+
 // ===================================================================
 
 func loadBookworms(filePath string) ([]Bookworm, error) {
@@ -115,12 +146,6 @@ func loadBookworms(filePath string) ([]Bookworm, error) {
 func sortBooks(books []Book) []Book {
 	sort.Sort(byAuthor(books))
 	return books
-}
-
-func displayBooks(books []Book) {
-	for _, book := range books {
-		fmt.Println("-", book.Title, "by", book.Author)
-	}
 }
 
 type byAuthor []Book

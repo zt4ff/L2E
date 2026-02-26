@@ -15,9 +15,18 @@ func main() {
 		fmt.Fprintf(os.Stderr, "error parsing JSON: %v", err)
 	}
 
-	// find common book
+	booksDir := getBooksDir(bookDatabase.Bookworms)
 
-	for key, _ := range bookDatabase.Bookworms {
-		fmt.Println(key)
+	var books []Book
+
+	for bookId, count := range booksDir {
+		if count > 1 {
+			book, ok := getBookbyId(bookId, bookDatabase)
+			if ok {
+				books = append(books, book)
+			}
+		}
 	}
+
+	displayBooks(books)
 }

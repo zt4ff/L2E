@@ -66,6 +66,21 @@ var (
 	}
 )
 
+// create vars of reusuable bookworms
+var (
+	fadi = Bookworm{
+		UserID: "u001",
+		BooksRead: []BookRead{
+			{
+				BookID: handmaidsTale.BookID,
+			},
+			{
+				BookID: theBellJar.BookID,
+			},
+		},
+	}
+)
+
 func TestParsingJson(t *testing.T) {
 	testcases := map[string]struct {
 		input   string // file path
@@ -110,6 +125,28 @@ func TestParsingJson(t *testing.T) {
 			if !reflect.DeepEqual(bookDatabase.Books, testcase.want) {
 				t.Fatalf("books don't match, expect %v but got %v", testcase.want, bookDatabase.Books)
 				return
+			}
+		})
+	}
+}
+
+// =====================================================================
+func TestGetBookDir(t *testing.T) {
+	testcases := map[string]struct {
+		input []Bookworm
+		want  map[string]int
+	}{
+		"happy path": {
+			input: []Bookworm{fadi},
+			want:  map[string]int{handmaidsTale.BookID: 1, theBellJar.BookID: 1},
+		},
+	}
+
+	for name, testcase := range testcases {
+		t.Run(name, func(t *testing.T) {
+			got := getBooksDir(testcase.input)
+			if !reflect.DeepEqual(got, testcase.want) {
+				t.Fatalf("different result. want %v but got %v", testcase.want, got)
 			}
 		})
 	}
