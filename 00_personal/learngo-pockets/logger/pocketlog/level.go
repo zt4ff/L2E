@@ -8,10 +8,19 @@ const (
 	LevelDebug Level = iota
 	// LevelInfo represents a logging level that contains informated deemed inportant
 	LevelInfo
-	// LevelWarn represents a logging level to warn users
-	LevelWarn
 	// LevelError represents a logging level for errors
 	LevelError
-	// LevelError represents a logging level that indicates fatal situation in the system
-	LevelFatal
 )
+
+func (l Level) String() string {
+	switch l {
+	case LevelDebug:
+		return "Debug"
+	case LevelInfo:
+		return "Info"
+	case LevelError:
+		return "Error"
+	default:
+		return "Unknown"
+	}
+}

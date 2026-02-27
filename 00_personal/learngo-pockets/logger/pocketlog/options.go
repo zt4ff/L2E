@@ -10,3 +10,10 @@ func WithOutput(output io.Writer) Option {
 		lgr.output = output
 	}
 }
+
+// WithLimit returns a configuration function that sets the limit of log messages
+func WithLimit(limit uint) Option {
+	return func(lgr *Logger) {
+		lgr.limit = limit
+	}
+}

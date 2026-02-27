@@ -10,63 +10,59 @@ import (
 type Logger struct {
 	threshold Level
 	output    io.Writer
+	limit     uint
 }
 
 // New returns you a logger, ready to log at the required threshold
 func New(threshold Level, opts ...Option) *Logger {
-	lgr := &Logger{
+	lgr := Logger{
 		threshold: threshold,
 		output:    os.Stdout,
+		limit:     1000, // default
 	}
 
 	for _, configFunc := range opts {
-		configFunc(lgr)
+		configFunc(&lgr)
 	}
 
-	return lgr
+	return &lgr
 }
 
-// logf prints the message to the output.
-func (l *Logger) logf(format string, args ...any) {
-	_, _ = fmt.Fprintf(l.output, format, args...)
+func (l *Logger) Logf(lvl Level, format string, args ...any) {
+	if l.threshold > lvl {
+		return
+	}
+
+	msg := fmt.Sprintf("%s - "+format, append([]any{lvl}, args...)...)
+
+	if uint(len(msg)) > l.limit {
+		msg = msg[:l.limit]
+	}
+
+	fmt.Fprintln(l.output, msg)
 }
 
 // Debugf formats and prints a message if the log level is debug or higher
 func (l *Logger) Debugf(format string, args ...any) {
-	if l.threshold > LevelDebug {
-		return
-	}
-
-	// making sure we can safely write to the output
 	if l.output == nil {
 		l.output = os.Stdout
 	}
 
-	_, _ = fmt.Fprintf(l.output, format+"\n", args...)
+	l.Logf(LevelDebug, format, args...)
 }
 
 func (l *Logger) Infof(format string, args ...any) {
-	if l.threshold > LevelInfo {
-		return
-	}
-
-	// making sure we can safely write to the output
 	if l.output == nil {
 		l.output = os.Stdout
 	}
 
-	_, _ = fmt.Fprintf(l.output, format+"\n", args...)
+	l.Logf(LevelInfo, format, args...)
 }
 
 func (l *Logger) Errorf(format string, args ...any) {
-	if l.threshold > LevelError {
-		return
-	}
-
-	// making sure we can safely write to the output
 	if l.output == nil {
 		l.output = os.Stdout
 	}
 
-	_, _ = fmt.Fprintf(l.output, format+"\n", args...)
+	l.Logf(LevelError, format, args...)
 }
