@@ -1,10 +1,7 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"os"
-	"sort"
 )
 
 type Book struct {
@@ -105,45 +102,4 @@ func displayBooks(books []Book) {
 	for _, book := range books {
 		fmt.Printf("Book - %s by %s\n", book.Title, book.Author)
 	}
-}
-
-// ===================================================================
-
-func loadBookworms(filePath string) ([]Bookworm, error) {
-	f, err := os.Open(filePath)
-	if err != nil {
-		return nil, err
-	}
-	defer f.Close()
-
-	var bookworms []Bookworm
-	err = json.NewDecoder(f).Decode(&bookworms)
-	if err != nil {
-		return nil, err
-	}
-
-	return bookworms, nil
-}
-
-func sortBooks(books []Book) []Book {
-	sort.Sort(byAuthor(books))
-	return books
-}
-
-type byAuthor []Book
-
-// Len implements sort.Interface by returning the lenth of BookByAuthor
-func (b byAuthor) Len() int { return len(b) }
-
-func (b byAuthor) Swap(i, j int) {
-	b[i], b[j] = b[j], b[i]
-}
-
-// Less implements sort.Interface and returns books sorted by Author and then Title
-func (b byAuthor) Less(i, j int) bool {
-	if b[i].Author != b[j].Author {
-		return b[i].Author < b[j].Author
-	}
-
-	return b[i].Title < b[j].Title
 }
