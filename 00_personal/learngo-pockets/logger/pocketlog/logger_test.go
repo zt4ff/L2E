@@ -12,6 +12,6 @@ import (
 // outside of the package
 
 func ExampleLogger_Debugf() {
-	debugLogger := pocketlog.New(pocketlog.LevelDebug, os.Stderr)
+	debugLogger := pocketlog.New(pocketlog.LevelDebug, pocketlog.WithOutput(os.Stdout))
 	debugLogger.Debugf("Hello, %s", "world")
 }

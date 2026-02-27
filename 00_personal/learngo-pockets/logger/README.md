@@ -12,3 +12,10 @@
 
 ---
 
+## Functional Option patterns
+
+
+
+## Todo
+- read about testing functions that does fmt.Print
+- read about functional options pattern
