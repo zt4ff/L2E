@@ -31,6 +31,11 @@ func main() {
 	}
 
 	if mode == ModeRecommendation {
+		recommendationDatabase, err := parseJSON[RecommendationsDatabase](path)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error parsing JSON: %v", err)
+		}
 
+		fmt.Println(recommendationDatabase)
 	}
 }
