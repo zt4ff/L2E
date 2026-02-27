@@ -1,5 +1,7 @@
 package pocketlog
 
+import "fmt"
+
 // Logger is used to log information
 type Logger struct {
 	threshold Level
@@ -7,7 +9,11 @@ type Logger struct {
 
 // Debugf formats and prints a message if the log level is debug or higher
 func (l *Logger) Debugf(format string, args ...any) {
-	// todo
+	if l.threshold > LevelDebug {
+		return
+	}
+
+	_, _ = fmt.Printf(format+"\n", args...)
 }
 
 func (l *Logger) Infof(format string, args ...any) {
