@@ -1,6 +1,9 @@
 package pocketlog_test
 
-import "logger/pocketlog"
+import (
+	"logger/pocketlog"
+	"os"
+)
 
 // Go won't allow use have more than one package in a folder. But if we surfix the package name with
 // _test, it's allowed. And you'd have to import pocketlog package differently here
@@ -9,6 +12,6 @@ import "logger/pocketlog"
 // outside of the package
 
 func ExampleLogger_Debugf() {
-	debugLogger := pocketlog.New(pocketlog.LevelDebug)
+	debugLogger := pocketlog.New(pocketlog.LevelDebug, os.Stderr)
 	debugLogger.Debugf("Hello, %s", "world")
 }
