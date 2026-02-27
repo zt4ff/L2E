@@ -2,7 +2,7 @@
 
 ## Goal of the application
 
-- a library that enables the user to log information at any type
+- a library that enables the user to log information of any type
 
 - a library that makes availale methods to the signature resembling that of `fmt`
 
