@@ -78,24 +78,6 @@ type BookDatabase struct {
 	Bookworms []Bookworm `json:"bookworms"`
 }
 
-func parseJson(path string) (BookDatabase, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return BookDatabase{}, err
-	}
-	defer f.Close()
-
-	var bookDatabase BookDatabase
-
-	err = json.NewDecoder(f).Decode(&bookDatabase)
-
-	if err != nil {
-		return BookDatabase{}, err
-	}
-
-	return bookDatabase, nil
-}
-
 // gets a struct of books read with the number of their appearance across bookworms
 func getBooksDir(bookworms []Bookworm) map[string]int {
 	booksDir := make(map[string]int)

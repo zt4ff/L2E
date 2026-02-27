@@ -106,7 +106,7 @@ func TestParsingJson(t *testing.T) {
 
 	for name, testcase := range testcases {
 		t.Run(name, func(t *testing.T) {
-			bookDatabase, err := parseJson(testcase.input)
+			bookDatabase, err := parseJSON[BookDatabase](testcase.input)
 
 			if testcase.wantErr && err != nil {
 				return
