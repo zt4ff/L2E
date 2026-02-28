@@ -11,6 +11,7 @@ type Logger struct {
 	threshold Level
 	output    io.Writer
 	limit     uint
+	Reader    Reader
 }
 
 // New returns you a logger, ready to log at the required threshold
@@ -20,6 +21,8 @@ func New(threshold Level, opts ...Option) *Logger {
 		output:    os.Stdout,
 		limit:     1000, // default
 	}
+
+	lgr.Reader = *newReader(&lgr)
 
 	for _, configFunc := range opts {
 		configFunc(&lgr)
