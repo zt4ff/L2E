@@ -2,7 +2,6 @@
 
 When writing tests in Go, one common challenge is verifying what your program prints to standard output. Since `fmt.Printf` writes directly to `os.Stdout`, you can't simply "read" the output after the fact, but you can intercept it. This article walks you through the technique step by step.
 
-
 ## The Core Problem
 
 Consider a function like this:
