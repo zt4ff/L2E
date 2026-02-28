@@ -17,5 +17,7 @@
 
 
 ## Todo
-- read about testing functions that does fmt.Print
-- read about functional options pattern
+- read and write about testing functions that does fmt.Print
+- read and write about functional options pattern
+- format the log document
+- read log documents and show analysis result
