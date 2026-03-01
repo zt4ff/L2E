@@ -30,5 +30,5 @@ func main() {
 	// READ LOG OPERATIONS
 	// =====================
 
-	lgr.Reader.Tail(10)
+	lgr.Reader.Stat()
 }
