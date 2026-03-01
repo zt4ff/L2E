@@ -47,25 +47,13 @@ func (l *Logger) Logf(lvl Level, format string, args ...any) {
 
 // Debugf formats and prints a message if the log level is debug or higher
 func (l *Logger) Debugf(format string, args ...any) {
-	if l.output == nil {
-		l.output = os.Stdout
-	}
-
 	l.Logf(LevelDebug, format, args...)
 }
 
 func (l *Logger) Infof(format string, args ...any) {
-	if l.output == nil {
-		l.output = os.Stdout
-	}
-
 	l.Logf(LevelInfo, format, args...)
 }
 
 func (l *Logger) Errorf(format string, args ...any) {
-	if l.output == nil {
-		l.output = os.Stdout
-	}
-
 	l.Logf(LevelError, format, args...)
 }

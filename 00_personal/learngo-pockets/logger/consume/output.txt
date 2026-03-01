@@ -1,8 +1,40 @@
 Info - A little copying is better than a little dependency.
 Error - Errors are values. Documentation is for users.
 Debug - Make the zero (0) value useful.
-Info - Hallo, 2022 2026-02-28 16:34:56.641958821 +0100 WAT m=+0.000153176
+Info - Hallo, 2022 2026-02-28 21:22:42.012018689 +0100 WAT m=+0.000149117
 Info - A little copying is better than a little dependency.
 Error - Errors are values. Documentation is for users.
 Debug - Make the zero (0) value useful.
-Info - Hallo, 2022 2026-02-28 16:47:36.333883916 +0100 WAT m=+0.000211679
+Info - Hallo, 2022 2026-02-28 21:22:42.012198737 +0100 WAT m=+0.000329164
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:22:42.012214095 +0100 WAT m=+0.000344524
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:22:42.012226144 +0100 WAT m=+0.000356571
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:22:42.012237389 +0100 WAT m=+0.000367818
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:54:47.130746251 +0100 WAT m=+0.000117640
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:54:47.130895976 +0100 WAT m=+0.000267372
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:54:47.130912956 +0100 WAT m=+0.000284343
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:54:47.1309315 +0100 WAT m=+0.000302889
+Info - A little copying is better than a little dependency.
+Error - Errors are values. Documentation is for users.
+Debug - Make the zero (0) value useful.
+Info - Hallo, 2022 2026-02-28 21:54:47.13094789 +0100 WAT m=+0.000319279

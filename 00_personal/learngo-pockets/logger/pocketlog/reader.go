@@ -1,6 +1,10 @@
 package pocketlog
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 // Reader is used to read log information
 type Reader struct {
@@ -8,16 +12,67 @@ type Reader struct {
 }
 
 func newReader(logger *Logger) *Reader {
-	reader := Reader{
-		logger: logger,
+	return &Reader{logger: logger}
+}
+
+func (r *Reader) openFile() (*os.File, error) {
+	f, ok := r.logger.output.(*os.File)
+	if !ok {
+		return nil, fmt.Errorf("logger output is not a file")
 	}
-	return &reader
+	return os.Open(f.Name())
 }
 
 func (r *Reader) Head(lines int) {
-	// for i := 0; i < lines; i++ {
-	//
-	// }
+	file, err := r.openFile()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
 
-	fmt.Println(r.logger.output)
+	scanner := bufio.NewScanner(file)
+	for i := 0; i < lines && scanner.Scan(); i++ {
+		fmt.Println(scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Printf("error reading log: %v\n", err)
+	}
+}
+
+func (r *Reader) Tail(lines int) {
+	file, err := r.openFile()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+
+	// Ring buffer: only keep the last `lines` lines in memory
+	buf := make([]string, lines)
+	count := 0
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		buf[count%lines] = scanner.Text()
+		count++
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Printf("error reading log: %v\n", err)
+		return
+	}
+
+	start, total := 0, min(count, lines)
+	if count > lines {
+		start = count % lines
+	}
+	for i := range total {
+		fmt.Println(buf[(start+i)%lines])
+	}
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }

@@ -18,13 +18,17 @@ func main() {
 	defer file.Close()
 
 	lgr := pocketlog.New(pocketlog.LevelDebug, pocketlog.WithOutput(file))
-	lgr.Infof("A little copying is better than a little dependency.")
-	lgr.Errorf("Errors are values. Documentation is for %s.", "users")
-	lgr.Debugf("Make the zero (%d) value useful.", 0)
-	lgr.Infof("Hallo, %d %v", 2022, time.Now())
+
+	for _ = range 5 {
+		lgr.Infof("A little copying is better than a little dependency.")
+		lgr.Errorf("Errors are values. Documentation is for %s.", "users")
+		lgr.Debugf("Make the zero (%d) value useful.", 0)
+		lgr.Logf(pocketlog.LevelInfo, "Hallo, %d %v", 2022, time.Now())
+	}
 
 	// =====================
-	// READ LOG
+	// READ LOG OPERATIONS
+	// =====================
 
-	lgr.Reader.Head(10)
+	lgr.Reader.Tail(10)
 }
