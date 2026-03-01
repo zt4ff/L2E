@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 // Reader is used to read log information
@@ -13,6 +14,16 @@ type Reader struct {
 
 func newReader(logger *Logger) *Reader {
 	return &Reader{logger: logger}
+}
+
+func printError(err error) {
+	fmt.Fprintf(os.Stderr, "%v\n", err)
+}
+
+func getLevelAndMessage(line string) (level string, msg string) {
+	split := strings.Split(line, " - ")
+
+	return split[0], split[1]
 }
 
 func (r *Reader) openFile() (*os.File, error) {
@@ -26,7 +37,7 @@ func (r *Reader) openFile() (*os.File, error) {
 func (r *Reader) Head(lines int) {
 	file, err := r.openFile()
 	if err != nil {
-		fmt.Println(err)
+		printError(err)
 		return
 	}
 	defer file.Close()
@@ -36,14 +47,14 @@ func (r *Reader) Head(lines int) {
 		fmt.Println(scanner.Text())
 	}
 	if err := scanner.Err(); err != nil {
-		fmt.Printf("error reading log: %v\n", err)
+		printError(err)
 	}
 }
 
 func (r *Reader) Tail(lines int) {
 	file, err := r.openFile()
 	if err != nil {
-		fmt.Println(err)
+		printError(err)
 		return
 	}
 	defer file.Close()
@@ -67,6 +78,41 @@ func (r *Reader) Tail(lines int) {
 	}
 	for i := range total {
 		fmt.Println(buf[(start+i)%lines])
+	}
+}
+
+func (r *Reader) Stat() map[string]uint {
+	file, err := r.openFile()
+	if err != nil {
+		printError(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+
+	stat := make(map[string]uint)
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		level, _ := getLevelAndMessage(line)
+
+		stat[level]++
+	}
+
+	return stat
+}
+
+func (r *Reader) PrintAll() {
+	file, err := r.openFile()
+	if err != nil {
+		printError(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
 	}
 }
 
