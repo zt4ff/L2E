@@ -24,3 +24,9 @@ b := CustomError
 
 a == b // true
 ```
+
+
+
+## TODO
+- fix failing tests
+- implement a TUI for the game
