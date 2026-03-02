@@ -33,14 +33,19 @@ type Game struct {
 }
 
 // NewGame eturns a Game which can be used to play wht gordle game
-func NewGame(playerInput io.Reader, solution string, maxAttempts uint) *Game {
+func NewGame(reader io.Reader, corpus []string, maxAttempts uint) (*Game, error) {
+
+	if len(corpus) == 0 {
+		return nil, ErrCorpusIsEmpty
+	}
+
 	g := &Game{
-		reader:      bufio.NewReader(playerInput),
-		solution:    toUppercaseCharacters(solution),
+		reader:      bufio.NewReader(reader),
+		solution:    []rune(strings.ToUpper(pickWord(corpus))),
 		maxAttempts: maxAttempts,
 	}
 
-	return g
+	return g, nil
 }
 
 // Play starts the gordle game

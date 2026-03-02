@@ -2,6 +2,7 @@ package gordle
 
 import (
 	"errors"
+	"reflect"
 	"slices"
 	"strings"
 	"testing"
@@ -154,5 +155,33 @@ func TestComputeFeedback(t *testing.T) {
 				t.Errorf("expected: %s, got %s", tc.expected, got)
 			}
 		})
+	}
+}
+
+func TestReadCorpus(t *testing.T) {
+	tt := map[string]struct {
+		path    string
+		wantErr bool
+		expect  []string
+	}{
+		"nominal": {
+			path:    "testdata/test_text.txt",
+			wantErr: false,
+			expect:  []string{"apple", "brave", "chair", "dream", "eagle"},
+		},
+	}
+
+	for name, tc := range tt {
+		t.Run(name, func(t *testing.T) {
+			got, err := ReadCorpus(tc.path)
+			if !tc.wantErr && err != nil {
+				t.Errorf("got an error when it's not expected: %v", err)
+			}
+
+			if !reflect.DeepEqual(got, tc.expect) {
+				t.Errorf("expecting: %s, got: %s", tc.expect, got)
+			}
+		})
+
 	}
 }
