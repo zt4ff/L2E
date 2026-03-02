@@ -110,3 +110,24 @@ func TestToUpperCase(t *testing.T) {
 		})
 	}
 }
+
+func TestFeedString(t *testing.T) {
+	tt := map[string]struct {
+		input    feedback
+		expected string
+	}{
+		"nominal": {
+			input:    feedback{absentCharacter, wrongPosition, correctPosition},
+			expected: "⬜🟡💚",
+		},
+	}
+
+	for name, tc := range tt {
+		t.Run(name, func(t *testing.T) {
+			got := tc.input.String()
+			if got != tc.expected {
+				t.Errorf("expected: %s, got :%s", tc.expected, got)
+			}
+		})
+	}
+}
