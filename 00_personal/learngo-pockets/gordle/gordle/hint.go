@@ -34,3 +34,17 @@ func (fb feedback) String() string {
 	}
 	return sb.String()
 }
+
+func (fb feedback) Equal(other feedback) bool {
+	if len(fb) != len(other) {
+		return false
+	}
+
+	for index, fbr := range fb {
+		if other[index] != fbr {
+			return false
+		}
+	}
+
+	return true
+}

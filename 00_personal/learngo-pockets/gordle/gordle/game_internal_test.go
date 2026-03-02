@@ -131,3 +131,28 @@ func TestFeedString(t *testing.T) {
 		})
 	}
 }
+
+func TestComputeFeedback(t *testing.T) {
+	tt := map[string]struct {
+		guess    []rune
+		solution []rune
+		expected string
+	}{
+		"nominal": {
+			guess:    toUppercaseCharacters("small"),
+			solution: toUppercaseCharacters("hello"),
+			expected: "⬜⬜⬜💚🟡",
+		},
+	}
+
+	for name, tc := range tt {
+		t.Run(name, func(t *testing.T) {
+			fb := computeFeedback(tc.guess, tc.solution)
+
+			got := fb.String()
+			if got != tc.expected {
+				t.Errorf("expected: %s, got %s", tc.expected, got)
+			}
+		})
+	}
+}
