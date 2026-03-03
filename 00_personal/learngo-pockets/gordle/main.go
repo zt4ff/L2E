@@ -1,10 +1,12 @@
 package main
 
-import "gordle/gordle"
+import (
+	"gordle/gordle"
+	"os"
+)
 
 func main() {
-
-	game := gordle.NewGame()
+	game := gordle.NewGame(os.Stdin)
 
 	game.Play()
 }
